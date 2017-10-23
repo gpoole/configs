@@ -1,0 +1,9 @@
+#!/bin/bash
+git pull --prune
+
+BRANCH_ARGS=""
+if ! [ -z "`git branch --list develop`" ]; then
+	BRANCH_ARGS="--merged develop"
+fi
+
+git branch --merged master $BRANCH_ARGS | grep -v -e 'master$' -e 'develop$' | xargs git branch -d
