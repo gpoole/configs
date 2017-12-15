@@ -1,0 +1,62 @@
+# Enable prefix
+khd mode prefix prefix on
+khd mode prefix timeout 0.25
+
+# Activate prefix mode
+ctrl - s : khd -e "mode activate prefix"
+
+# reload config
+cmd + alt + ctrl - r : khd -e "reload"
+
+# focus window
+cmd + alt - h : chunkc tiling::window --focus west
+cmd + alt - j : chunkc tiling::window --focus south
+cmd + alt - k : chunkc tiling::window --focus north
+cmd + alt - l : chunkc tiling::window --focus east
+
+# equalize size of windows
+# shift + alt - 0 : chunkc tiling::desktop --equalize
+
+# swap window
+shift + alt - h : chunkc tiling::window --swap west
+shift + alt - j : chunkc tiling::window --swap south
+shift + alt - k : chunkc tiling::window --swap north
+shift + alt - l : chunkc tiling::window --swap east
+
+# send window to desktop and switch desktop
+ctrl + cmd - h : chunkc tiling::window -d prev; khd -p "cmd + alt - z"
+ctrl + cmd - l : chunkc tiling::window -d next; khd -p "cmd + alt - c"
+
+# send window to monitor and follow focus
+ctrl + cmd - 1  : chunkc tiling::window --send-to-monitor 1; chunkc tiling::monitor -f 1
+ctrl + cmd - 2  : chunkc tiling::window --send-to-monitor 2; chunkc tiling::monitor -f 2
+
+# increase region size
+prefix - h : chunkc tiling::window --use-temporary-ratio 0.1 --adjust-window-edge west
+prefix - j : chunkc tiling::window --use-temporary-ratio 0.1 --adjust-window-edge south
+prefix - k : chunkc tiling::window --use-temporary-ratio 0.1 --adjust-window-edge north
+prefix - l : chunkc tiling::window --use-temporary-ratio 0.1 --adjust-window-edge east
+
+# decrease region size
+prefix + shift - h : chunkc tiling::window --use-temporary-ratio -0.1 --adjust-window-edge west
+prefix + shift - j : chunkc tiling::window --use-temporary-ratio -0.1 --adjust-window-edge south
+prefix + shift - k : chunkc tiling::window --use-temporary-ratio -0.1 --adjust-window-edge north
+prefix + shift - l : chunkc tiling::window --use-temporary-ratio -0.1 --adjust-window-edge east
+
+# rotate tree
+cmd + alt - r : chunkc tiling::desktop --rotate 90
+
+# mirror tree y-axis
+alt - y : chunkc tiling::desktop --mirror vertical
+
+# mirror tree x-axis
+alt - x : chunkc tiling::desktop --mirror horizontal
+
+# toggle window fullscreen
+prefix - f : chunkc tiling::window --toggle fullscreen
+
+# toggle window native fullscreen
+prefix + shift - f : chunkc tiling::window --toggle native-fullscreen
+
+# Set layout
+# ctrl + alt - w : chunkc tiling::desktop --deserialize ~/.chunkwm_layouts/dev_1
