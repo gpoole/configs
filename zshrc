@@ -119,7 +119,11 @@ function git-pr() {
   if ! [ -r "$PR_FILE" ]; then
     echo "> Enter the subject here" > $PR_FILE
     echo >> $PR_FILE
-    cat PULL_REQUEST_TEMPLATE.md >> $PR_FILE
+    if [ -r PULL_REQUEST_TEMPLATE.md ]; then
+      cat PULL_REQUEST_TEMPLATE.md >> $PR_FILE
+    elif [ -r .github/PULL_REQUEST_TEMPLATE.md ]; then
+      cat .github/PULL_REQUEST_TEMPLATE.md >> $PR_FILE
+    fi
   fi
   vi $PR_FILE
   if [[ `grep -v "#" $PR_FILE | wc -l` -eq 0 ]]; then

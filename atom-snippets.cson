@@ -35,6 +35,9 @@
   'import-react-dom':
     'prefix': 'imprd'
     'body': 'import ReactDOM from \'react-dom\';'
+  'import-lodash':
+    'prefix': 'impl'
+    'body': 'import $1 from \'lodash/$1\';'
   'require':
     'prefix': 'req'
     'body': 'const ${1}${2} = require(\'${3:$1}$4\');$5'
@@ -64,7 +67,7 @@
     'body': '$1={$2}'
   'react-component':
     'prefix': 'comp'
-    'body': """class $1 extends React.Component {
+    'body': """class $1 extends React.PureComponent {
       static propTypes = {
 
       };
@@ -121,6 +124,13 @@
     'prefix': 'describe'
     'body': """
     describe('$1', () => {
+      $2
+    });
+    """
+  'jest-test':
+    'prefix': 'test'
+    'body': """
+    test('$1', () => {
       $2
     });
     """

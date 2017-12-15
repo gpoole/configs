@@ -82,7 +82,7 @@ kwmc config mouse-drag on
 kwmc config mouse-drag mod shift+ctrl
 
 # Allow window focus to wrap-around
-kwmc config cycle-focus on
+kwmc config cycle-focus off
 
 /*
 Override default settings for space 1 on screen 0
@@ -143,3 +143,6 @@ kwmc config border marked on
 kwmc config border marked size 2
 # kwmc config border marked color 0xFFCC5577
 kwmc config border marked radius 6
+
+# Override default optimal ratio to get horizontal splits on laptop
+kwmc config optimal-ratio 1.5
