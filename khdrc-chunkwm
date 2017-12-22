@@ -2,8 +2,14 @@
 khd mode prefix prefix on
 khd mode prefix timeout 0.25
 
-# Activate prefix mode
+# Activate modes
 ctrl - s : khd -e "mode activate prefix"
+ctrl - m : khd -e "mode activate resize"
+resize - escape : khd -e "mode activate default"
+
+khd mode resize on_enter chunkc border::color 0xFFBEE2E0
+khd mode prefix on_enter chunkc border::color 0xFFC31C38
+khd mode default on_enter chunkc border::color 0x00FFFFFF
 
 # reload config
 cmd + alt + ctrl - r : khd -e "reload"
@@ -15,7 +21,7 @@ cmd + alt - k : chunkc tiling::window --focus north
 cmd + alt - l : chunkc tiling::window --focus east
 
 # equalize size of windows
-# shift + alt - 0 : chunkc tiling::desktop --equalize
+resize - e : chunkc tiling::desktop --equalize
 
 # swap window
 ctrl + alt - h : chunkc tiling::window --swap west
@@ -32,19 +38,19 @@ ctrl + cmd - 1  : chunkc tiling::window --send-to-monitor 1; chunkc tiling::moni
 ctrl + cmd - 2  : chunkc tiling::window --send-to-monitor 2; chunkc tiling::monitor -f 2
 
 # increase region size
-prefix - h : chunkc tiling::window --use-temporary-ratio 0.025 --adjust-window-edge west
-prefix - j : chunkc tiling::window --use-temporary-ratio 0.025 --adjust-window-edge south
-prefix - k : chunkc tiling::window --use-temporary-ratio 0.025 --adjust-window-edge north
-prefix - l : chunkc tiling::window --use-temporary-ratio 0.025 --adjust-window-edge east
+resize - h : chunkc tiling::window --use-temporary-ratio 0.1 --adjust-window-edge west
+resize - j : chunkc tiling::window --use-temporary-ratio 0.1 --adjust-window-edge south
+resize - k : chunkc tiling::window --use-temporary-ratio 0.1 --adjust-window-edge north
+resize - l : chunkc tiling::window --use-temporary-ratio 0.1 --adjust-window-edge east
 
 # decrease region size
-prefix + shift - h : chunkc tiling::window --use-temporary-ratio -0.025 --adjust-window-edge west
-prefix + shift - j : chunkc tiling::window --use-temporary-ratio -0.025 --adjust-window-edge south
-prefix + shift - k : chunkc tiling::window --use-temporary-ratio -0.025 --adjust-window-edge north
-prefix + shift - l : chunkc tiling::window --use-temporary-ratio -0.025 --adjust-window-edge east
+resize + shift - h : chunkc tiling::window --use-temporary-ratio -0.1 --adjust-window-edge west
+resize + shift - j : chunkc tiling::window --use-temporary-ratio -0.1 --adjust-window-edge south
+resize + shift - k : chunkc tiling::window --use-temporary-ratio -0.1 --adjust-window-edge north
+resize + shift - l : chunkc tiling::window --use-temporary-ratio -0.1 --adjust-window-edge east
 
 # rotate tree
-cmd + alt - r : chunkc tiling::desktop --rotate 90
+cmd + ctrl - r : chunkc tiling::desktop --rotate 90
 
 # mirror tree y-axis
 alt - y : chunkc tiling::desktop --mirror vertical
@@ -53,10 +59,10 @@ alt - y : chunkc tiling::desktop --mirror vertical
 alt - x : chunkc tiling::desktop --mirror horizontal
 
 # toggle window fullscreen
-prefix - f : chunkc tiling::window --toggle fullscreen
+resize - f : chunkc tiling::window --toggle fullscreen
 
 # toggle window native fullscreen
-prefix + shift - f : chunkc tiling::window --toggle native-fullscreen
+prefix - f : chunkc tiling::window --toggle native-fullscreen
 
 # Set layout
 prefix - s : chunkc tiling::desktop --serialize ~/.chunkwm_layouts/dev_1
