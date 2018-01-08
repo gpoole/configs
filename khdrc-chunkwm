@@ -29,13 +29,17 @@ ctrl + alt - j : chunkc tiling::window --swap south
 ctrl + alt - k : chunkc tiling::window --swap north
 ctrl + alt - l : chunkc tiling::window --swap east
 
+# swap monitor
+cmd + alt + shift - h : chunkc tiling::monitor -f next
+cmd + alt + shift - l : chunkc tiling::monitor -f prev
+
 # send window to desktop and switch desktop
 ctrl + cmd - h : chunkc tiling::window -d prev
 ctrl + cmd - l : chunkc tiling::window -d next
 
 # send window to monitor and follow focus
-ctrl + cmd - 1  : chunkc tiling::window --send-to-monitor 1; chunkc tiling::monitor -f 1
-ctrl + cmd - 2  : chunkc tiling::window --send-to-monitor 2; chunkc tiling::monitor -f 2
+ctrl + alt + shift - h  : chunkc tiling::window --send-to-monitor next; chunkc tiling::monitor -f next
+ctrl + alt + shift - l  : chunkc tiling::window --send-to-monitor prev; chunkc tiling::monitor -f prev
 
 # increase region size
 resize - h : chunkc tiling::window --use-temporary-ratio 0.1 --adjust-window-edge west
