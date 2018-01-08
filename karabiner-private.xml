@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<root>
+  <autogen>
+    __HoldingKeyToKey__
+    KeyCode::TAB, ModifierFlag::NONE,
+
+    <!-- short press -->
+    @begin
+    KeyCode::ESCAPE,
+    @end
+
+    <!-- hold -->
+    @begin
+    KeyCode::W, ModifierFlag::COMMAND_L,
+    @end
+
+    Option::NOREPEAT,
+  </autogen>
+  <item>
+    <identifier>remap.remap_move_spaces</identifier>
+    <name>Remap CapsLock + hl to move spaces left and right (assumes CapsLock has been remapped to SHIFT_R)</name>
+        <autogen>__KeyToKey__ KeyCode::H, ModifierFlag::SHIFT_R, KeyCode::CURSOR_LEFT, ModifierFlag::CONTROL_L</autogen>
+        <autogen>__KeyToKey__ KeyCode::L, ModifierFlag::SHIFT_R, KeyCode::CURSOR_RIGHT, ModifierFlag::CONTROL_L</autogen>
+  </item>
+</root>
