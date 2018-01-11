@@ -38,8 +38,8 @@ ctrl + cmd - h : chunkc tiling::window -d prev
 ctrl + cmd - l : chunkc tiling::window -d next
 
 # send window to monitor and follow focus
-ctrl + alt + shift - h  : chunkc tiling::window --send-to-monitor next; chunkc tiling::monitor -f next
-ctrl + alt + shift - l  : chunkc tiling::window --send-to-monitor prev; chunkc tiling::monitor -f prev
+ctrl + cmd + shift - h  : chunkc tiling::window --send-to-monitor next; chunkc tiling::monitor -f next
+ctrl + cmd + shift - l  : chunkc tiling::window --send-to-monitor prev; chunkc tiling::monitor -f prev
 
 # increase region size
 resize - h : chunkc tiling::window --use-temporary-ratio 0.1 --adjust-window-edge west
