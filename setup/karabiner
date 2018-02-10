@@ -1,0 +1,4 @@
+rm -f ~/.config/karabiner/karabiner.json
+ln -s ~/.my-configs/karabiner.json ~/.config/karabiner/karabiner.json
+
+defaults write -g ApplePressAndHoldEnabled -bool false

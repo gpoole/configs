@@ -1,0 +1,4 @@
+brew tap crisidev/homebrew-chunkwm
+brew install koekeishiya/formulae/khd chunkwm
+ln -s ~/.my-configs/khdrc ~/.khdrc
+ln -s ~/.my-configs/chunkwmrc ~/.chunkwmrc

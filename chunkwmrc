@@ -22,9 +22,9 @@ chunkc set global_desktop_mode           bsp
 chunkc set 1_desktop_mode                float
 
 # Dev layouts
-for i in `seq 3 10`; do
-  chunkc set ${i}_desktop_tree ~/.chunkwm_layouts/dev_1
-done
+#for i in `seq 3 10`; do
+#  chunkc set ${i}_desktop_tree ~/.chunkwm_layouts/dev_1
+#done
 
 
 chunkc set global_desktop_offset_top     0

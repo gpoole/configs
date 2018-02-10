@@ -1,0 +1,3 @@
+defaults write NSGlobalDomain _HIHideMenuBar -bool true
+defaults write -g AppleInterfaceStyle -string Dark
+killall -KILL Dock
