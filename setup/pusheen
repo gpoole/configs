@@ -1,0 +1,3 @@
+mkdir -p ~/Scripts
+git clone https://github.com/Lit0r/pusheen-push.git ~/Scripts/git-pusheen
+~/Scripts/git-pusheen/git_pusheen_setup.sh
