@@ -1,0 +1,12 @@
+mkdir -p ~/.ssh
+if [ ! -r ~/.ssh/id_rsa ]; then
+  read -p "Copy the private SSH key to the clipboard and press enter to continue..." 
+  pbpaste > ~/.ssh/id_rsa
+fi
+if [ ! -r ~/.ssh/id_rsa.pub ]; then
+  read -p "Copy the public SSH key to the clipboard and press enter to continue..." 
+  pbpaste > ~/.ssh/id_rsa.pub
+fi
+chmod a-rwx ~/.ssh/id_rsa ~/.ssh/id_rsa.pub
+chmod u+rw ~/.ssh/id_rsa ~/.ssh/id_rsa.pub
+ssh-add -K ~/.ssh/id_rsa
