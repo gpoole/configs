@@ -19,3 +19,7 @@ export CLICOLOR=1
 alias ls="ls -lhG"
 
 PATH=$HOME/Scripts:$PATH
+
+if [ -r ~/.zshrc-local ]; then
+    . ~/.zshrc-local
+fi
