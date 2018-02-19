@@ -17,3 +17,5 @@ export EDITOR="vi"
 export CLICOLOR=1
 
 alias ls="ls -lhG"
+
+PATH=$HOME/Scripts:$PATH
