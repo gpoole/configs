@@ -1,0 +1,11 @@
+{
+    "workbench.startupEditor": "newUntitledFile",
+    "atomKeymap.promptV3Features": true,
+    "editor.multiCursorModifier": "ctrlCmd",
+    "editor.formatOnPaste": true,
+    "gitlens.codeLens.enabled": false,
+    "vim.easymotion": true,
+    "vim.useSystemClipboard": true,
+    "editor.codeLens": false,
+    "workbench.editor.enablePreview": false
+}
