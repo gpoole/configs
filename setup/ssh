@@ -9,7 +9,7 @@ if [ ! -r ~/.ssh/id_rsa.pub ]; then
 fi
 chmod a-rwx ~/.ssh/id_rsa ~/.ssh/id_rsa.pub
 chmod u+rw ~/.ssh/id_rsa ~/.ssh/id_rsa.pub
-ssh-add -K ~/.ssh/id_rsa
+ssh-add -AK ~/.ssh/id_rsa
 echo "Host *
 UseKeychain yes
 AddKeysToAgent yes
