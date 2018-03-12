@@ -7,5 +7,7 @@
     "vim.easymotion": true,
     "vim.useSystemClipboard": true,
     "editor.codeLens": false,
-    "workbench.editor.enablePreview": false
+    "workbench.editor.enablePreview": false,
+    "editor.formatOnSave": true,
+    "gitlens.keymap": "alternate"
 }
