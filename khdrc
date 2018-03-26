@@ -1,6 +1,6 @@
 # Enable prefix
 khd mode prefix prefix on
-khd mode prefix timeout 0.25
+khd mode prefix timeout 0.5
 
 # Activate modes
 ctrl - s : khd -e "mode activate prefix"
@@ -9,10 +9,9 @@ resize - escape : khd -e "mode activate default"
 
 khd mode resize on_enter chunkc border::color 0xFFBEE2E0
 khd mode prefix on_enter chunkc border::color 0xFFC31C38
+khd mode save_layout on_enter chunkc border::color 0xFF8C00FF
+khd mode load_layout on_enter chunkc border::color 0xFF8C00FF
 khd mode default on_enter chunkc border::color 0x00FFFFFF
-
-# reload config
-cmd + alt + ctrl - r : khd -e "reload"
 
 # focus window
 cmd + alt - h : chunkc tiling::window --focus west
@@ -56,18 +55,41 @@ resize + shift - l : chunkc tiling::window --use-temporary-ratio -0.1 --adjust-w
 # rotate tree
 cmd + ctrl - r : chunkc tiling::desktop --rotate 90
 
-# mirror tree y-axis
-alt - y : chunkc tiling::desktop --mirror vertical
-
-# mirror tree x-axis
-alt - x : chunkc tiling::desktop --mirror horizontal
-
 # toggle window fullscreen
-resize - f : chunkc tiling::window --toggle fullscreen
+prefix - f : chunkc tiling::window --toggle fullscreen
 
 # toggle window native fullscreen
-prefix - f : chunkc tiling::window --toggle native-fullscreen
+prefix + shift - f : chunkc tiling::window --toggle native-fullscreen
+
+# Reload config
+prefix - r : khd -e "reload"
 
 # Set layout
-prefix - s : chunkc tiling::desktop --serialize ~/.chunkwm_layouts/dev_1
-prefix - r : chunkc tiling::desktop --deserialize ~/.chunkwm_layouts/dev_1
+prefix - s : khd -e "mode activate save_layout"
+prefix - l : khd -e "mode activate load_layout"
+save_layout - escape : khd -e "mode activate default"
+load_layout - escape : khd -e "mode activate default"
+
+# for i in `seq 1 9`; do
+#     echo "save_layout - $i : chunkc tiling::desktop --serialize ~/.chunkwm_layouts/layout_$i && khd -e 'mode activate default'"
+#     echo "load_layout - $i : chunkc tiling::desktop --deserialize ~/.chunkwm_layouts/layout_$i && khd -e 'mode activate default'"
+# done
+
+save_layout - 1 : chunkc tiling::desktop --serialize ~/.chunkwm_layouts/layout_1 && khd -e 'mode activate default'
+load_layout - 1 : chunkc tiling::desktop --deserialize ~/.chunkwm_layouts/layout_1 && khd -e 'mode activate default'
+save_layout - 2 : chunkc tiling::desktop --serialize ~/.chunkwm_layouts/layout_2 && khd -e 'mode activate default'
+load_layout - 2 : chunkc tiling::desktop --deserialize ~/.chunkwm_layouts/layout_2 && khd -e 'mode activate default'
+save_layout - 3 : chunkc tiling::desktop --serialize ~/.chunkwm_layouts/layout_3 && khd -e 'mode activate default'
+load_layout - 3 : chunkc tiling::desktop --deserialize ~/.chunkwm_layouts/layout_3 && khd -e 'mode activate default'
+save_layout - 4 : chunkc tiling::desktop --serialize ~/.chunkwm_layouts/layout_4 && khd -e 'mode activate default'
+load_layout - 4 : chunkc tiling::desktop --deserialize ~/.chunkwm_layouts/layout_4 && khd -e 'mode activate default'
+save_layout - 5 : chunkc tiling::desktop --serialize ~/.chunkwm_layouts/layout_5 && khd -e 'mode activate default'
+load_layout - 5 : chunkc tiling::desktop --deserialize ~/.chunkwm_layouts/layout_5 && khd -e 'mode activate default'
+save_layout - 6 : chunkc tiling::desktop --serialize ~/.chunkwm_layouts/layout_6 && khd -e 'mode activate default'
+load_layout - 6 : chunkc tiling::desktop --deserialize ~/.chunkwm_layouts/layout_6 && khd -e 'mode activate default'
+save_layout - 7 : chunkc tiling::desktop --serialize ~/.chunkwm_layouts/layout_7 && khd -e 'mode activate default'
+load_layout - 7 : chunkc tiling::desktop --deserialize ~/.chunkwm_layouts/layout_7 && khd -e 'mode activate default'
+save_layout - 8 : chunkc tiling::desktop --serialize ~/.chunkwm_layouts/layout_8 && khd -e 'mode activate default'
+load_layout - 8 : chunkc tiling::desktop --deserialize ~/.chunkwm_layouts/layout_8 && khd -e 'mode activate default'
+save_layout - 9 : chunkc tiling::desktop --serialize ~/.chunkwm_layouts/layout_9 && khd -e 'mode activate default'
+load_layout - 9 : chunkc tiling::desktop --deserialize ~/.chunkwm_layouts/layout_9 && khd -e 'mode activate default'
