@@ -3,11 +3,23 @@
     "atomKeymap.promptV3Features": true,
     "editor.multiCursorModifier": "ctrlCmd",
     "editor.formatOnPaste": true,
+    "editor.formatOnSave": true,
+    "editor.acceptSuggestionOnCommitCharacter": false,
+    "editor.codeLens": false,
     "gitlens.codeLens.enabled": false,
+    "search.location": "panel",
     "vim.easymotion": true,
     "vim.useSystemClipboard": true,
-    "editor.codeLens": false,
     "workbench.editor.enablePreview": false,
-    "editor.formatOnSave": true,
-    "gitlens.keymap": "alternate"
+    "gitlens.keymap": "chorded",
+    "gitlens.advanced.messages": {
+        "suppressCommitHasNoPreviousCommitWarning": false,
+        "suppressCommitNotFoundWarning": false,
+        "suppressFileNotUnderSourceControlWarning": false,
+        "suppressGitVersionWarning": false,
+        "suppressLineUncommittedWarning": false,
+        "suppressNoRepositoryWarning": false,
+        "suppressResultsExplorerNotice": false,
+        "suppressShowKeyBindingsNotice": true
+    },
 }
