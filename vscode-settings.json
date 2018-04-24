@@ -22,4 +22,5 @@
         "suppressResultsExplorerNotice": false,
         "suppressShowKeyBindingsNotice": true
     },
+    "window.zoomLevel": 0,
 }

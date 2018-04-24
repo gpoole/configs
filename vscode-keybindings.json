@@ -1,27 +1,29 @@
 // Place your key bindings in this file to overwrite the defaults
 [
+    // Panel shortcuts
     {
-        "key": "cmd+k cmd+l",
+        "key": "cmd+k l",
         "command": "workbench.action.focusNextGroup"
     },
     {
-        "key": "cmd+k cmd+right",
-        "command": "-workbench.action.focusNextGroup"
+        "key": "cmd+k h",
+        "command": "workbench.action.focusPreviousGroup"
     },
     {
-        "key": "cmd+k cmd+h",
-        "command": "workbench.action.focusPreviousGroup"
+        "key": "cmd+k cmd+l",
+        "command": "workbench.action.splitEditor"
+    },
+    // Unset existing panel shortcuts
+    {
+        "key": "cmd+k left",
+        "command": "-workbench.action.splitEditor"
     },
     {
         "key": "cmd+k cmd+left",
         "command": "-workbench.action.focusPreviousGroup"
     },
     {
-        "key": "cmd+k l",
-        "command": "workbench.action.splitEditor"
-    },
-    {
-        "key": "cmd+k left",
-        "command": "-workbench.action.splitEditor"
+        "key": "cmd+k cmd+right",
+        "command": "-workbench.action.focusNextGroup"
     }
 ]
