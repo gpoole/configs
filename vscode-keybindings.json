@@ -25,5 +25,16 @@
     {
         "key": "cmd+k cmd+right",
         "command": "-workbench.action.focusNextGroup"
+    },
+    // Rename file with cmd+enter, open with enter
+    {
+        "key": "cmd+enter",
+        "command": "renameFile",
+        "when": "explorerViewletVisible && filesExplorerFocus && !inputFocus"
+    },
+    {
+        "key": "enter",
+        "command": "-renameFile",
+        "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !inputFocus"
     }
 ]
