@@ -23,4 +23,5 @@
         "suppressShowKeyBindingsNotice": true
     },
     "window.zoomLevel": 0,
+    "csharp.format.enable": false
 }
