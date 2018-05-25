@@ -23,5 +23,6 @@
         "suppressShowKeyBindingsNotice": true
     },
     "window.zoomLevel": 0,
-    "csharp.format.enable": false
+    "csharp.format.enable": false,
+    "gitlens.historyExplorer.enabled": true
 }
