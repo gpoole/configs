@@ -34,5 +34,3 @@ addPath() {
         PATH="$newPart:$PATH"
     fi
 }
-
-PATH=$HOME/Scripts:$PATH
