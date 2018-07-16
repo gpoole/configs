@@ -1,0 +1,2 @@
+set vim-surround
+set clipboard+=unnamed
