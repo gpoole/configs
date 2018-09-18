@@ -1,2 +1,8 @@
-set vim-surround
+set surround
 set clipboard+=unnamed
+
+nnoremap <Tab> >>_
+nnoremap <S-Tab> <<_
+inoremap <S-Tab> <C-D>
+vnoremap <Tab> >gv
+vnoremap <S-Tab> <gv
