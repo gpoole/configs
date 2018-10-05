@@ -3,38 +3,66 @@
     // Panel shortcuts
     {
         "key": "cmd+k l",
-        "command": "workbench.action.focusNextGroup"
+        "command": "workbench.action.focusNextGroup",
+        "when": "isMac"
     },
     {
         "key": "cmd+k h",
-        "command": "workbench.action.focusPreviousGroup"
+        "command": "workbench.action.focusPreviousGroup",
+        "when": "isMac"
     },
     {
         "key": "cmd+k cmd+l",
-        "command": "workbench.action.splitEditor"
+        "command": "workbench.action.splitEditor",
+        "when": "isMac"
     },
+    {
+        "key": "ctrl+k h",
+        "command": "workbench.action.focusLeftGroup",
+        "when": "!isMac"
+    },
+    {
+        "key": "ctrl+k ctrl+left",
+        "command": "-workbench.action.focusLeftGroup",
+        "when": "!isMac"
+    },
+    {
+        "key": "ctrl+k l",
+        "command": "workbench.action.focusRightGroup",
+        "when": "!isMac"
+    },
+    {
+        "key": "ctrl+k ctrl+right",
+        "command": "-workbench.action.focusRightGroup",
+        "when": "!isMac"
+    }
     // Unset existing panel shortcuts
     {
         "key": "cmd+k left",
-        "command": "-workbench.action.splitEditor"
+        "command": "-workbench.action.splitEditor",
+        "when": "isMac"
     },
     {
         "key": "cmd+k cmd+left",
-        "command": "-workbench.action.focusPreviousGroup"
+        "command": "-workbench.action.focusPreviousGroup",
+        "when": "isMac"
     },
     {
         "key": "cmd+k cmd+right",
-        "command": "-workbench.action.focusNextGroup"
+        "command": "-workbench.action.focusNextGroup",
+        "when": "isMac"
     },
     // Rename file with cmd+enter, open with enter
     {
         "key": "cmd+enter",
         "command": "renameFile",
-        "when": "explorerViewletVisible && filesExplorerFocus && !inputFocus"
+        "when": "explorerViewletVisible && filesExplorerFocus && !inputFocus",
+        "when": "isMac"
     },
     {
         "key": "enter",
         "command": "-renameFile",
-        "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !inputFocus"
+        "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !inputFocus",
+        "when": "isMac"
     }
 ]
