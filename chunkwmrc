@@ -20,6 +20,7 @@ chunkc core::hotload 1
 
 chunkc set global_desktop_mode           bsp
 chunkc set 1_desktop_mode                float
+chunkc set 2_desktop_mode                monocle
 
 # Dev layouts
 #for i in `seq 3 10`; do
