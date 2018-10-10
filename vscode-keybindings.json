@@ -35,7 +35,7 @@
         "key": "ctrl+k ctrl+right",
         "command": "-workbench.action.focusRightGroup",
         "when": "!isMac"
-    }
+    },
     // Unset existing panel shortcuts
     {
         "key": "cmd+k left",
@@ -56,13 +56,11 @@
     {
         "key": "cmd+enter",
         "command": "renameFile",
-        "when": "explorerViewletVisible && filesExplorerFocus && !inputFocus",
-        "when": "isMac"
+        "when": "isMac && explorerViewletVisible && filesExplorerFocus && !inputFocus",
     },
     {
         "key": "enter",
         "command": "-renameFile",
-        "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !inputFocus",
-        "when": "isMac"
+        "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus",
     }
 ]
