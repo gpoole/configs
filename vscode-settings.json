@@ -25,5 +25,6 @@
     "window.zoomLevel": 0,
     "csharp.format.enable": false,
     "gitlens.historyExplorer.enabled": true,
-    "editor.minimap.enabled": false
+    "editor.minimap.enabled": false,
+    "javascript.updateImportsOnFileMove.enabled": "always"
 }

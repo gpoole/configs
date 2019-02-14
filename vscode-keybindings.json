@@ -1,71 +1,71 @@
 // Place your key bindings in this file to overwrite the defaults
 [
-    // Panel shortcuts
-    {
-        "key": "cmd+k l",
-        "command": "workbench.action.focusNextGroup",
-        "when": "isMac"
-    },
-    {
-        "key": "cmd+k h",
-        "command": "workbench.action.focusPreviousGroup",
-        "when": "isMac"
-    },
-    {
-        "key": "cmd+k cmd+l",
-        "command": "workbench.action.splitEditor",
-        "when": "isMac"
-    },
-    {
-        "key": "ctrl+k h",
-        "command": "workbench.action.focusLeftGroup",
-        "when": "!isMac"
-    },
-    {
-        "key": "ctrl+k ctrl+left",
-        "command": "-workbench.action.focusLeftGroup",
-        "when": "!isMac"
-    },
-    {
-        "key": "ctrl+k l",
-        "command": "workbench.action.focusRightGroup",
-        "when": "!isMac"
-    },
-    {
-        "key": "ctrl+k ctrl+right",
-        "command": "-workbench.action.focusRightGroup",
-        "when": "!isMac"
-    },
-    // Unset existing panel shortcuts
-    {
-        "key": "cmd+k left",
-        "command": "-workbench.action.splitEditor",
-        "when": "isMac"
-    },
-    {
-        "key": "cmd+k cmd+left",
-        "command": "-workbench.action.focusPreviousGroup",
-        "when": "isMac"
-    },
-    {
-        "key": "cmd+k cmd+right",
-        "command": "-workbench.action.focusNextGroup",
-        "when": "isMac"
-    },
-    // Rename file with cmd+enter, open with enter
-    {
-        "key": "cmd+enter",
-        "command": "renameFile",
-        "when": "isMac && explorerViewletVisible && filesExplorerFocus && !inputFocus",
-    },
-    {
-        "key": "enter",
-        "command": "-renameFile",
-        "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus",
-    },
-    {
-        "key": "a",
-        "command": "explorer.newFile",
-        "when": "explorerViewletFocus"
-    }
+  // Panel shortcuts
+  {
+    "key": "cmd+k l",
+    "command": "workbench.action.focusNextGroup",
+    "when": "isMac"
+  },
+  {
+    "key": "cmd+k h",
+    "command": "workbench.action.focusPreviousGroup",
+    "when": "isMac"
+  },
+  {
+    "key": "cmd+k cmd+l",
+    "command": "workbench.action.splitEditor",
+    "when": "isMac"
+  },
+  {
+    "key": "ctrl+k h",
+    "command": "workbench.action.focusLeftGroup",
+    "when": "!isMac"
+  },
+  {
+    "key": "ctrl+k ctrl+left",
+    "command": "-workbench.action.focusLeftGroup",
+    "when": "!isMac"
+  },
+  {
+    "key": "ctrl+k l",
+    "command": "workbench.action.focusRightGroup",
+    "when": "!isMac"
+  },
+  {
+    "key": "ctrl+k ctrl+right",
+    "command": "-workbench.action.focusRightGroup",
+    "when": "!isMac"
+  },
+  // Unset existing panel shortcuts
+  {
+    "key": "cmd+k left",
+    "command": "-workbench.action.splitEditor",
+    "when": "isMac"
+  },
+  {
+    "key": "cmd+k cmd+left",
+    "command": "-workbench.action.focusPreviousGroup",
+    "when": "isMac"
+  },
+  {
+    "key": "cmd+k cmd+right",
+    "command": "-workbench.action.focusNextGroup",
+    "when": "isMac"
+  },
+  // Rename file with cmd+enter, open with enter
+  {
+    "key": "cmd+enter",
+    "command": "renameFile",
+    "when": "isMac && explorerViewletVisible && filesExplorerFocus && !inputFocus"
+  },
+  {
+    "key": "enter",
+    "command": "-renameFile",
+    "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+  },
+  {
+    "key": "cmd+n",
+    "command": "explorer.newFile",
+    "when": "explorerViewletFocus"
+  }
 ]
