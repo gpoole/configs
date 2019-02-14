@@ -58,15 +58,19 @@ resize + shift - j : chunkc tiling::window --use-temporary-ratio -0.1 --adjust-w
 resize + shift - k : chunkc tiling::window --use-temporary-ratio -0.1 --adjust-window-edge north
 resize + shift - l : chunkc tiling::window --use-temporary-ratio -0.1 --adjust-window-edge east
 
+## float specific window
+resize - f : chunkc tiling::window --toggle float
+
+## toggle window fullscreen
+resize + alt - f : chunkc tiling::window --toggle fullscreen
+
+## toggle window native fullscreen
+resize + alt + shift - f : chunkc tiling::window --toggle native-fullscreen
+
 # rotate tree
 cmd + ctrl - r : chunkc tiling::desktop --rotate 90
 
 # Prefix mode
-## toggle window fullscreen
-prefix - f : chunkc tiling::window --toggle fullscreen
-
-## toggle window native fullscreen
-prefix + shift - f : chunkc tiling::window --toggle native-fullscreen
 
 ## Restart chunkwm
 prefix - r : brew services restart chunkwm
