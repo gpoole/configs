@@ -1,48 +1,55 @@
-# Enable prefix
-khd mode prefix prefix on
-khd mode prefix timeout 0.5
-
 # Activate modes
 ctrl - s : khd -e "mode activate prefix"
 ctrl - l : khd -e "mode activate layout"
-ctrl - m : khd -e "mode activate resize"
+ctrl - r : khd -e "mode activate resize"
+ctrl - m : khd -e "mode activate move"
 layout - s : khd -e "mode activate save_layout"
 layout - escape : khd -e "mode activate default"
 save_layout - escape : khd -e "mode activate default"
 resize - escape : khd -e "mode activate default"
+move - escape : khd -e "mode activate default"
 
-khd mode resize on_enter chunkc border::color 0xFFBEE2E0
-khd mode prefix on_enter chunkc border::color 0xFFC31C38
-khd mode save_layout on_enter chunkc border::color 0xFFAf8700
-khd mode layout on_enter chunkc border::color 0x7fAf8700
-khd mode default on_enter chunkc border::color 0x00FFFFFF
+# colours: https://www.colourlovers.com/palette/3283292/Bright_futures
+khd mode resize on_enter chunkc border::color 0xFF0FC3E8
+khd mode save_layout on_enter chunkc border::color 0x88E1E4E6
+khd mode layout on_enter chunkc border::color 0xFFE1E4E6
+khd mode default on_enter chunkc border::color 0x00000000
+khd mode move on_enter chunkc border::color 0xFFFA2A00
+
+# screenshot fix
+cmd + shift - 4 -> : chunkc border::clear
 
 # focus window
-cmd + alt - h : chunkc tiling::window --focus west
-cmd + alt - j : chunkc tiling::window --focus south
-cmd + alt - k : chunkc tiling::window --focus north
-cmd + alt - l : chunkc tiling::window --focus east
+alt - h : chunkc tiling::window --focus west
+alt - j : chunkc tiling::window --focus south
+alt - k : chunkc tiling::window --focus north
+alt - l : chunkc tiling::window --focus east
 
 # equalize size of windows
 resize - e : chunkc tiling::desktop --equalize
 
 # swap window
-ctrl + alt - h : chunkc tiling::window --swap west
-ctrl + alt - j : chunkc tiling::window --swap south
-ctrl + alt - k : chunkc tiling::window --swap north
-ctrl + alt - l : chunkc tiling::window --swap east
+move + alt - h : chunkc tiling::window --swap west
+move + alt - j : chunkc tiling::window --swap south
+move + alt - k : chunkc tiling::window --swap north
+move + alt - l : chunkc tiling::window --swap east
 
-# swap monitor
-cmd + alt + shift - h : chunkc tiling::monitor -f next
-cmd + alt + shift - l : chunkc tiling::monitor -f prev
+# warp window
+move - h : chunkc tiling::window --warp west
+move - j : chunkc tiling::window --warp south
+move - k : chunkc tiling::window --warp north
+move - l : chunkc tiling::window --warp east
 
 # send window to desktop and switch desktop
-ctrl + cmd - h : chunkc tiling::window -d prev
-ctrl + cmd - l : chunkc tiling::window -d next
+move + alt + shift - h : chunkc tiling::window -d prev
+move + alt + shift - l : chunkc tiling::window -d next
 
 # send window to monitor and follow focus
-ctrl + cmd + shift - h  : chunkc tiling::window --send-to-monitor next; chunkc tiling::monitor -f next
-ctrl + cmd + shift - l  : chunkc tiling::window --send-to-monitor prev; chunkc tiling::monitor -f prev
+move + cmd + shift - h  : chunkc tiling::window --send-to-monitor next; chunkc tiling::monitor -f next
+move + cmd + shift - l  : chunkc tiling::window --send-to-monitor prev; chunkc tiling::monitor -f prev
+
+## float specific window
+move - f : chunkc tiling::window --toggle float
 
 # Resize mode
 
@@ -58,22 +65,14 @@ resize + shift - j : chunkc tiling::window --use-temporary-ratio -0.1 --adjust-w
 resize + shift - k : chunkc tiling::window --use-temporary-ratio -0.1 --adjust-window-edge north
 resize + shift - l : chunkc tiling::window --use-temporary-ratio -0.1 --adjust-window-edge east
 
-## float specific window
-resize - f : chunkc tiling::window --toggle float
-
-## toggle window fullscreen
-resize + alt - f : chunkc tiling::window --toggle fullscreen
+## toggle window full-size
+resize - f : chunkc tiling::window --toggle fullscreen
 
 ## toggle window native fullscreen
-resize + alt + shift - f : chunkc tiling::window --toggle native-fullscreen
+resize + shift - f : chunkc tiling::window --toggle native-fullscreen
 
 # rotate tree
 cmd + ctrl - r : chunkc tiling::desktop --rotate 90
-
-# Prefix mode
-
-## Restart chunkwm
-prefix - r : brew services restart chunkwm
 
 # Layout mode
 
