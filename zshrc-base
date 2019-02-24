@@ -13,26 +13,9 @@ antigen theme avit
 
 antigen apply
 
-export EDITOR="vi"
+export EDITOR="vim"
 export CLICOLOR=1
 
 alias ls="ls -lhG"
 
 setopt extendedglob
-
-addPath() {
-    position="end"
-    newPart="$1"
-    if ! [ "$2" == "" ]; then
-        position="$2"
-    fi
-    if ! [ "$position" == "end" ] && ! [ "$position" == "start" ]; then
-        echo "WARNING: invalid path position $position, adding to end"
-        position="end"
-    fi
-    if [ "$position" == "end" ]; then
-        PATH="$PATH:$newPart"
-    elif [ "$position" == "start" ]; then
-        PATH="$newPart:$PATH"
-    fi
-}
