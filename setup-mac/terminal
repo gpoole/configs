@@ -1,0 +1,6 @@
+if ! [ -x /Applications/kitty.app/Contents/MacOS/kittY ]; then
+  curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
+fi 
+if ! [ -r ~/.config/kitty ]; then
+  ln -s ~/.my-configs/kitty ~/.config/kitty
+fi

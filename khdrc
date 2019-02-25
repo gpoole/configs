@@ -25,14 +25,12 @@ alt - j : chunkc tiling::window --focus south
 alt - k : chunkc tiling::window --focus north
 alt - l : chunkc tiling::window --focus east
 
+# focus monitor
+alt + shift - h : chunkc tiling::monitor -f prev
+alt + shift - l : chunkc tiling::monitor -f next
+
 # equalize size of windows
 resize - e : chunkc tiling::desktop --equalize
-
-# swap window
-move + alt - h : chunkc tiling::window --swap west
-move + alt - j : chunkc tiling::window --swap south
-move + alt - k : chunkc tiling::window --swap north
-move + alt - l : chunkc tiling::window --swap east
 
 # warp window
 move - h : chunkc tiling::window --warp west
@@ -40,9 +38,15 @@ move - j : chunkc tiling::window --warp south
 move - k : chunkc tiling::window --warp north
 move - l : chunkc tiling::window --warp east
 
+# swap window
+move + shift - h : chunkc tiling::window --swap west
+move + shift - j : chunkc tiling::window --swap south
+move + shift - k : chunkc tiling::window --swap north
+move + shift - l : chunkc tiling::window --swap east
+
 # send window to desktop and switch desktop
-move + alt + shift - h : chunkc tiling::window -d prev
-move + alt + shift - l : chunkc tiling::window -d next
+move + cmd - h : chunkc tiling::window -d prev
+move + cmd - l : chunkc tiling::window -d next
 
 # send window to monitor and follow focus
 move + cmd + shift - h  : chunkc tiling::window --send-to-monitor next; chunkc tiling::monitor -f next
@@ -104,3 +108,6 @@ layout - 9 : chunkc tiling::desktop --deserialize ~/.chunkwm_layouts/layout_9 &&
 layout - m : chunkc tiling::desktop --layout monocle && khd -e 'mode activate default'
 layout - b : chunkc tiling::desktop --layout bsp && khd -e 'mode activate default'
 layout - f : chunkc tiling::desktop --layout float && khd -e 'mode activate default'
+
+# Launchers
+cmd - return : /Applications/kitty.app/Contents/MacOS/kittY --single-instance -d ~

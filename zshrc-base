@@ -16,6 +16,9 @@ antigen apply
 export EDITOR="vim"
 export CLICOLOR=1
 
+bindkey "^[[1;3C" forward-word
+bindkey "^[[1;3D" backward-word
+
 alias ls="ls -lhG"
 
 setopt extendedglob
