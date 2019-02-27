@@ -70,10 +70,10 @@ resize + shift - k : chunkc tiling::window --use-temporary-ratio -0.1 --adjust-w
 resize + shift - l : chunkc tiling::window --use-temporary-ratio -0.1 --adjust-window-edge east
 
 ## toggle window full-size
-resize - f : chunkc tiling::window --toggle fullscreen
+ctrl - f : chunkc tiling::window --toggle fullscreen
 
 ## toggle window native fullscreen
-resize + shift - f : chunkc tiling::window --toggle native-fullscreen
+ctrl + shift - f : chunkc tiling::window --toggle native-fullscreen
 
 # rotate tree
 cmd + ctrl - r : chunkc tiling::desktop --rotate 90
