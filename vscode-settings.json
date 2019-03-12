@@ -27,5 +27,6 @@
     "gitlens.historyExplorer.enabled": true,
     "editor.minimap.enabled": false,
     "javascript.updateImportsOnFileMove.enabled": "always",
-    "workbench.colorTheme": "Base16 Classic Dark"
+    "workbench.colorTheme": "Base16 Classic Dark",
+    "editor.tabSize": 2
 }
