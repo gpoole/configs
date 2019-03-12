@@ -26,5 +26,6 @@
     "csharp.format.enable": false,
     "gitlens.historyExplorer.enabled": true,
     "editor.minimap.enabled": false,
-    "javascript.updateImportsOnFileMove.enabled": "always"
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "workbench.colorTheme": "Base16 Classic Dark"
 }

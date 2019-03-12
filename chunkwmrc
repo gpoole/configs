@@ -98,3 +98,5 @@ chunkc tiling::rule --owner Spotify --role AXWindow --subrole AXDialog --state t
 chunkc tiling::rule --owner VLC --state float
 chunkc tiling::rule --owner Finder --name Copy --state float
 chunkc tiling::rule --owner \"App Store\" --state float
+chunkc tiling::rule --owner VirtualBox --state float
+chunkc tiling::rule --owner \"Accessibility Inspector\" --state float
