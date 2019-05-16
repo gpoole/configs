@@ -5,3 +5,9 @@ ln -s ~/.my-configs/chunkwmrc ~/.chunkwmrc
 mkdir ~/.chunkwm_layouts
 brew services start chunkwm
 brew services start khd
+
+if [ -z "`csrutil status | grep disabled`" ]; then
+  echo "SIP is enabled, disable it to install chunkwm-sa"
+else
+  sudo chunkwm --install-sa
+fi

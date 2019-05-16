@@ -1,8 +1,8 @@
 # Activate modes
-ctrl - s : khd -e "mode activate prefix"
-ctrl - l : khd -e "mode activate layout"
+ctrl - o : khd -e "mode activate layout"
 ctrl - r : khd -e "mode activate resize"
 ctrl - m : khd -e "mode activate move"
+ctrl - d : khd -e "mode activate desktop"
 layout - s : khd -e "mode activate save_layout"
 layout - escape : khd -e "mode activate default"
 save_layout - escape : khd -e "mode activate default"
@@ -16,8 +16,18 @@ khd mode layout on_enter chunkc border::color 0xFFE1E4E6
 khd mode default on_enter chunkc border::color 0x00000000
 khd mode move on_enter chunkc border::color 0xFFFA2A00
 
+khd mode desktop prefix on
+khd mode desktop timeout 0.75
+
 # screenshot fix
 cmd + shift - 4 -> : chunkc border::clear
+
+# desktop control 
+
+ctrl - h : chunkc tiling::desktop --focus prev
+ctrl - l : chunkc tiling::desktop --focus next
+desktop - c : chunkc tiling::desktop --create; chunkc tiling::query --desktops-for-monitor `chunkc tiling::query --monitor id` | tr ' ' '\n' | tail -n 1 | xargs chunkc tiling::desktop --focus
+desktop - d : chunkc tiling::desktop --annihilate
 
 # focus window
 alt - h : chunkc tiling::window --focus west
@@ -111,3 +121,4 @@ layout - f : chunkc tiling::desktop --layout float && khd -e 'mode activate defa
 
 # Launchers
 cmd - return : /Applications/kitty.app/Contents/MacOS/kittY --single-instance -d ~
+cmd + shift - return : open ~/
