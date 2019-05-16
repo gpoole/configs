@@ -27,5 +27,6 @@
   "javascript.updateImportsOnFileMove.enabled": "always",
   "workbench.colorTheme": "Base16 Classic Dark",
   "editor.tabSize": 2,
-  "editor.lineNumbers": "relative"
+  "editor.lineNumbers": "relative",
+  "workbench.activityBar.visible": false
 }
