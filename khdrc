@@ -55,8 +55,22 @@ move + shift - k : chunkc tiling::window --swap north
 move + shift - l : chunkc tiling::window --swap east
 
 # send window to desktop and switch desktop
-move + cmd - h : chunkc tiling::window -d prev
-move + cmd - l : chunkc tiling::window -d next
+move + cmd - h : chunkc tiling::window -d prev; chunkc tiling::desktop --focus prev
+move + cmd - l : chunkc tiling::window -d next; chunkc tiling::desktop --focus next
+
+# for i in `seq 1 9`; do
+#   echo "move + cmd - $i : chunkc tiling:window --send-to-desktop $i; chunkc tiling::desktop --focus $i"
+# done
+
+move + cmd - 1 : chunkc tiling:window --send-to-desktop 1; chunkc tiling::desktop --focus 1
+move + cmd - 2 : chunkc tiling:window --send-to-desktop 2; chunkc tiling::desktop --focus 2
+move + cmd - 3 : chunkc tiling:window --send-to-desktop 3; chunkc tiling::desktop --focus 3
+move + cmd - 4 : chunkc tiling:window --send-to-desktop 4; chunkc tiling::desktop --focus 4
+move + cmd - 5 : chunkc tiling:window --send-to-desktop 5; chunkc tiling::desktop --focus 5
+move + cmd - 6 : chunkc tiling:window --send-to-desktop 6; chunkc tiling::desktop --focus 6
+move + cmd - 7 : chunkc tiling:window --send-to-desktop 7; chunkc tiling::desktop --focus 7
+move + cmd - 8 : chunkc tiling:window --send-to-desktop 8; chunkc tiling::desktop --focus 8
+move + cmd - 9 : chunkc tiling:window --send-to-desktop 9; chunkc tiling::desktop --focus 9
 
 # send window to monitor and follow focus
 move + cmd + shift - h  : chunkc tiling::window --send-to-monitor next; chunkc tiling::monitor -f next
