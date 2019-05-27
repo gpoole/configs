@@ -36,7 +36,7 @@ chunkc set bsp_optimal_ratio             1.5
 chunkc set bsp_split_mode                optimal
 chunkc set bsp_split_ratio               0.5
 
-chunkc set window_focus_cycle            all
+chunkc set window_focus_cycle            none
 chunkc set monitor_focus_cycle           1
 
 # This is set because you can only change spaces with the keyboard (ctrl + <- or ctrl + ->) if the actual mouse pointer
