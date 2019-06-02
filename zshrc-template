@@ -1,3 +1,6 @@
 source ~/.zshrc-base
 
+# Full SSH functionality in Kitty terminal
+# alias ssh="kitty +kitten ssh"
+
 # Add local config here
