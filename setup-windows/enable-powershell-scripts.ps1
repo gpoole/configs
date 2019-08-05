@@ -1,0 +1,2 @@
+#Requires -RunAsAdministrator
+Set-ExecutionPolicy unrestricted
