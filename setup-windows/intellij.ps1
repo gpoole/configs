@@ -1,15 +1,33 @@
 #Requires -RunAsAdministrator
-param(
-    [string]$installRoot = $HOME
-)
 $myConfigPath = (Split-Path -Parent $PSScriptRoot)
 
-$configPath = (Join-Path $myConfigPath "ideavimrc");
-$targetPath = (Join-Path $installRoot ".ideavimrc")
-if (-Not (Get-Item $targetPath -ErrorAction SilentlyContinue)) {
-    Write-Output "Creating link from ${configPath} to ${targetPath}"
-    New-Item -Path $targetPath -ItemType SymbolicLink -Value $configPath | Out-Null
+$vimConfigPath = (Join-Path $myConfigPath "ideavimrc");
+$vimTargetPath = (Join-Path $HOME ".ideavimrc")
+if (-Not (Get-Item $vimTargetPath -ErrorAction SilentlyContinue)) {
+  Write-Output "Creating link from ${vimConfigPath} to ${vimTargetPath}"
+  New-Item -Path $vimTargetPath -ItemType SymbolicLink -Value $vimConfigPath | Out-Null
 }
 else {
-    Write-Output "Skipping linking ${targetPath}, it already exists."
+  Write-Output "Skipping linking ${vimTargetPath}, it already exists."
 }
+
+$riderRoot = (Resolve-Path "$HOME\.Rider*\config")
+$colorsDir = (Join-Path $riderRoot "colors")
+if (-Not (Get-Item $colorsDir -ErrorAction SilentlyContinue)) {
+  New-Item -Path $colorsDir -ItemType Directory
+}
+
+# This scheme doesn't seem to be compatible with Rider, it's just here
+# in case I get time to fix it later
+$colorSchemeUrl = "https://raw.githubusercontent.com/adilosa/base16-jetbrains/master/colors/base16-classic-dark.icls"
+$colorSchemeFile = (Split-Path -Leaf $colorSchemeUrl)
+$colorSchemePath = (Join-Path $colorsDir $colorSchemeFile)
+if (-Not (Get-Item $colorSchemePath -ErrorAction SilentlyContinue)) {
+  Write-Output "Downloading $colorSchemeFile..."
+  Invoke-WebRequest -UseBasicParsing -Uri $colorSchemeUrl | Select-Object -ExpandProperty Content > $colorSchemePath
+}
+else {
+  Write-Output "Skipping download of $colorSchemeFile, already installed."
+}
+
+Write-Output "Done."
