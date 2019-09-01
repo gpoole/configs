@@ -29,11 +29,5 @@
   "editor.tabSize": 2,
   "editor.lineNumbers": "relative",
   "workbench.activityBar.visible": false,
-  "prettier.eslintIntegration": true,
-  "[json]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+  "eslint.autoFixOnSave": true
 }
