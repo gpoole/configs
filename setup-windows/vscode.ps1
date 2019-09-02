@@ -1,3 +1,4 @@
+#Requires -RunAsAdministrator
 $installRoot = "$env:APPDATA\Code\User\"
 $myConfigPath = (Split-Path -Parent $PSScriptRoot)
 
