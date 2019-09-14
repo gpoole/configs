@@ -100,3 +100,4 @@ chunkc tiling::rule --owner "Unity Hub" --state float
 chunkc tiling::rule --owner "^Unity$" --state tile
 chunkc tiling::rule --owner "JetBrains Rider" --name Generate --state float
 chunkc tiling::rule --owner "JetBrains Rider" --name Rename --state float
+chunkc tiling::rule --owner "JetBrains Rider" --name Preferences --state float

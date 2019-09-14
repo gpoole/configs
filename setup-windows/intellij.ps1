@@ -11,7 +11,7 @@ else {
   Write-Output "Skipping linking ${vimTargetPath}, it already exists."
 }
 
-$riderRoot = (Resolve-Path "$HOME\.Rider*\config")
+$riderRoot = (Resolve-Path "$HOME\.Rider*")
 $colorsDir = (Join-Path $riderRoot "colors")
 if (-Not (Get-Item $colorsDir -ErrorAction SilentlyContinue)) {
   New-Item -Path $colorsDir -ItemType Directory

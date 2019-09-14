@@ -1,1 +1,10 @@
-ln -s $PWD/ideavimrc ~/.ideavimrc
+if [ ! -f ~/.ideavimrc ]; then
+  ln -s $PWD/ideavimrc ~/.ideavimrc
+fi
+
+
+riderPath=~/Library/Preferences/`ls -1 ~/Library/Preferences | sort | grep Rider | tail -n1`
+themePath="$riderPath/colors"
+mkdir -p "$themePath"
+curl "https://raw.githubusercontent.com/adilosa/base16-jetbrains/master/colors/base16-classic-dark.icls" > "$themePath/Base16 Classic Dark.icls"
+echo "Now set the colour scheme to Base16 Classic Dark under Preferences > Editor > Color Scheme"
