@@ -96,8 +96,11 @@ chunkc tiling::rule --owner Finder --name Copy --state float
 chunkc tiling::rule --owner \"App Store\" --state float
 chunkc tiling::rule --owner VirtualBox --state float
 chunkc tiling::rule --owner \"Accessibility Inspector\" --state float
-chunkc tiling::rule --owner "Unity Hub" --state float
-chunkc tiling::rule --owner "^Unity$" --state tile
+# chunkc tiling::rule --owner "Unity Hub" --state float
+# The rule above seems to cause Unity to float as well, but this override then forces *all*
+# Unity windows to tile, including popups
+# chunkc tiling::rule --owner "^Unity$" --state tile
 chunkc tiling::rule --owner "JetBrains Rider" --name Generate --state float
 chunkc tiling::rule --owner "JetBrains Rider" --name Rename --state float
 chunkc tiling::rule --owner "JetBrains Rider" --name Preferences --state float
+chunkc tiling::rule --owner "JetBrains Rider" --name Evaluate --state float
