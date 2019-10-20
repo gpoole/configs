@@ -29,6 +29,20 @@ ctrl - l : chunkc tiling::desktop --focus next
 desktop - c : chunkc tiling::desktop --create; chunkc tiling::query --desktops-for-monitor `chunkc tiling::query --monitor id` | tr ' ' '\n' | tail -n 1 | xargs chunkc tiling::desktop --focus
 desktop - d : chunkc tiling::desktop --annihilate
 
+# for i in `seq 1 9`; do
+#   echo "alt - $i : chunkc tiling::desktop --focus $i"
+# done
+
+alt - 1 : chunkc tiling::desktop --focus 1
+alt - 2 : chunkc tiling::desktop --focus 2
+alt - 3 : chunkc tiling::desktop --focus 3
+alt - 4 : chunkc tiling::desktop --focus 4
+alt - 5 : chunkc tiling::desktop --focus 5
+alt - 6 : chunkc tiling::desktop --focus 6
+alt - 7 : chunkc tiling::desktop --focus 7
+alt - 8 : chunkc tiling::desktop --focus 8
+alt - 9 : chunkc tiling::desktop --focus 9
+
 # focus window
 alt - h : chunkc tiling::window --focus west
 alt - j : chunkc tiling::window --focus south
