@@ -1,7 +1,7 @@
 #Requires -RunAsAdministrator
-$myConfigPath = (Split-Path -Parent $PSScriptRoot)
+$myConfigPath = $PWD
 
-$vimConfigPath = (Join-Path $myConfigPath "ideavimrc");
+$vimConfigPath = [io.path]::Combine($myConfigPath, "shared", "ideavimrc");
 $vimTargetPath = (Join-Path $HOME ".ideavimrc")
 if (-Not (Get-Item $vimTargetPath -ErrorAction SilentlyContinue)) {
   Write-Output "Creating link from ${vimConfigPath} to ${vimTargetPath}"

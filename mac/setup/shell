@@ -7,6 +7,6 @@ fi
 brew install zsh zsh-completions antigen
 chsh -s $(which zsh)
 
-ln -s ~/.my-configs/zshrc-base ~/.zshrc-base
-cp zshrc-template ~/.zshrc
+ln -s $PWD/shared/zshrc-base ~/.zshrc-base
+cp shared/zshrc-template ~/.zshrc
 

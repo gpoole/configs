@@ -1,6 +1,6 @@
 #Requires -RunAsAdministrator
 $installRoot = "$env:APPDATA\Code\User\"
-$myConfigPath = (Split-Path -Parent $PSScriptRoot)
+$myConfigPath = $PWD
 
 function Add-Config {
   $source, $target = $args
@@ -9,9 +9,9 @@ function Add-Config {
   New-Item -Path $fullTargetPath -ItemType SymbolicLink -Value (Join-Path $myConfigPath $source)
 }
 
-Add-Config "vscode-settings.json" "settings.json"
-Add-Config "vscode-keybindings.json" "keybindings.json"
+Add-Config "shared\vscode-settings.json" "settings.json"
+Add-Config "shared\vscode-keybindings.json" "keybindings.json"
 
-Get-Content (Join-Path $myConfigPath "vscode-extensions.txt") | ForEach-Object {
+Get-Content (Join-Path $myConfigPath "shared\vscode-extensions.txt") | ForEach-Object {
   code --install-extension $_
 }
