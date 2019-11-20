@@ -1,0 +1,3 @@
+#!/bin/bash
+# https://forum.manjaro.org/t/solved-terrible-sound-in-linux-much-better-in-windows/8203/19
+cp -f linux/arch/pulse-daemon.conf ~/.config/pulse/daemon.conf
