@@ -1,0 +1,2 @@
+#!/bin/bash
+git clone --recurse-submodules git@github.com:gpoole/scripts.git ~/Scripts

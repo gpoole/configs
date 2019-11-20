@@ -1,4 +1,9 @@
+source /usr/local/share/antigen/antigen.zsh
+
 source ~/.zshrc-base
+
+# System-specific plugins
+# antigen bundle brew
 
 # Full SSH functionality in Kitty terminal
 # alias ssh="kitty +kitten ssh"
