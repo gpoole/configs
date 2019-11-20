@@ -114,7 +114,10 @@ super + q
 
 # Cycle through active desktop
 super + Tab
-	bspc desktop -f '^{1-9,10}'
+	bspc desktop -f next
+
+super + shift + Tab
+	bspc desktop -f prev
 
 # Rotate desktop
 alt + space
@@ -150,6 +153,17 @@ super + ctrl + space
 # Reload bspwm
 super + shift + r
 	~/.config/bspwm/bspwmrc
+
+# Move window to desktop
+super + ctrl + {1-9,0}
+	bspc node -d '^{1-9,10}'
+
+# Move window to desktop and follow
+super + ctrl + shift + {1-9,0}
+	id=$(bspc query --nodes --node); \
+	bspc node -d '^{1-9,10}'; \
+	bspc desktop -f '^{1-9,10}'; \
+	bspc node --focus ${id}
 
 # Focus/swap windows by direction
 super + {_,shift + }{h,j,k,l}
