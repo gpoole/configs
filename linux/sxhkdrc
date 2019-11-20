@@ -28,6 +28,10 @@ ctrl + alt + a
 ctrl + shift + Escape
     xfce4-taskmanager
 
+# Oblogout
+super + x
+  oblogout
+
 ## Screenshots
 
 # Scrot
