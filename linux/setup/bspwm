@@ -1,0 +1,5 @@
+rm -f ~/.config/bspwm/bspwmrc
+ln -s $PWD/linux/bspwmrc ~/.config/bspwm/bspwmrc
+
+rm -f ~/.config/bspwm/sxhkd/sxhkdrc
+ln -s $PWD/linux/sxhkdrc ~/.config/bspwm/sxhkd/sxhkdrc
