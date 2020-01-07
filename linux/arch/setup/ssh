@@ -1,0 +1,8 @@
+#!/usr/bin/bash
+mkdir -p ~/.config/systemd/user/
+service=~/.config/systemd/user/ssh-agent.service
+if ! [ -r $service ]; then
+    ln -s $PWD/linux/arch/ssh-agent.service $service
+fi 
+echo 'SSH_AUTH_SOCK DEFAULT="${XDG_RUNTIME_DIR}/ssh-agent.socket"' > ~/.pam_environment
+systemctl --user enable ssh-agent

@@ -1,0 +1,10 @@
+rm -f ~/.config/bspwm/bspwmrc
+ln -s $PWD/linux/bspwmrc ~/.config/bspwm/bspwmrc
+
+rm -f ~/.config/bspwm/sxhkd/sxhkdrc
+ln -s $PWD/linux/sxhkdrc ~/.config/bspwm/sxhkd/sxhkdrc
+
+# Patch in the compton settings we care about
+sed -i "/inactive-dim /c\inactive-dim = 0.2;" ~/.config/bspwm/compton.conf
+# https://github.com/chjj/compton/issues/392
+sed -i "/mark-ovredir-focused /c\mark-ovredir-focused = false;" ~/.config/bspwm/compton.conf

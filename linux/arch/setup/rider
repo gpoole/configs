@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# https://github.com/swaywm/sway/issues/595
+
+if [ -z "$(grep _JAVA_AWT_WM_NONREPARENTING ~/.profile)" ]; then
+  echo -e '\nexport _JAVA_AWT_WM_NONREPARENTING=1' >> ~/.profile
+fi
+
+if [  -z "$(grep wmname ~/.config/bspwm/autostart.sh)" ]; then
+  echo -e '\nwmname LG3D' >> ~/.config/bspwm/autostart.sh
+fi
+
+if [ ! -f ~/.ideavimrc ]; then
+  ln -s $PWD/shared/ideavimrc ~/.ideavimrc
+fi
