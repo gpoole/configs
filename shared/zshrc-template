@@ -3,4 +3,7 @@ source ~/.zshrc-base
 # Full SSH functionality in Kitty terminal
 # alias ssh="kitty +kitten ssh"
 
+# PATH="$HOME/Scripts/mac:$PATH"
+# PATH="$HOME/Scripts/linux:$PATH"
+
 # Add local config here

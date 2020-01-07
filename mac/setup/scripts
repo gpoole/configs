@@ -1,0 +1,2 @@
+git clone --recurse-submodules git@github.com:gpoole/scripts.git ~/Scripts
+~/Scripts/git-pusheen/git_pusheen_setup.sh

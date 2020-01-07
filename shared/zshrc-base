@@ -21,4 +21,7 @@ bindkey "^[[1;3D" backward-word
 
 alias ls="ls -lhG"
 
+PATH="$HOME/Scripts:$PATH"
+PATH="$HOME/Scripts/local:$PATH"
+
 setopt extendedglob
