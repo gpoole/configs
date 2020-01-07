@@ -49,6 +49,9 @@ alt - j : chunkc tiling::window --focus south
 alt - k : chunkc tiling::window --focus north
 alt - l : chunkc tiling::window --focus east
 
+# close window
+cmd + shift - c : chunkc tiling::window --close
+
 # focus monitor
 alt + shift - h : chunkc tiling::monitor -f prev
 alt + shift - l : chunkc tiling::monitor -f next

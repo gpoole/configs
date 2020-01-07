@@ -6,6 +6,9 @@ antigen bundle colored-man
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle zsh-users/zsh-autosuggestions
 
+export NVM_AUTO_USE=true
+antigen bundle lukechilds/zsh-nvm
+
 antigen theme avit
 
 antigen apply
