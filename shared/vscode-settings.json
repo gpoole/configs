@@ -29,10 +29,10 @@
   "editor.tabSize": 2,
   "editor.lineNumbers": "relative",
   "workbench.activityBar.visible": false,
-  "eslint.autoFixOnSave": true,
   "editor.suggestSelection": "first",
-  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
-  "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true
+  "eslint.alwaysShowStatus": true,
+  "eslint.format.enable": true,
+  "[javascript]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
   }
 }
