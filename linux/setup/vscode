@@ -1,3 +1,4 @@
+rm -f ~/.config/Code/User/settings.json ~/.config/Code/User/keybindings.json
 ln -s $PWD/shared/vscode-settings.json ~/.config/Code/User/settings.json
 ln -s $PWD/shared/vscode-keybindings.json ~/.config/Code/User/keybindings.json
 
