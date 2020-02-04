@@ -13,4 +13,10 @@ source ~/.zshrc-base
 
 # eval "$(ssh-agent)" > /dev/null
 
+# if [[ -z $(pidof ssh-agent) && -z $(pidof gpg-agent) ]]; then
+#     eval $(keychain --eval --quiet --inherit any)
+# else
+#   . ~/.keychain/*-sh
+# fi
+
 # Add local config here
