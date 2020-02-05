@@ -22,3 +22,4 @@ Tyriar.lorem-ipsum
 vscodevim.vim
 wix.vscode-import-cost
 ms-vscode.powershell
+naumovs.color-highlight
