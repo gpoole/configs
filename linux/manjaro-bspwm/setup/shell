@@ -1,5 +1,16 @@
-#!/bin/bash
-yay -S antigen-git
-chsh -s $(which zsh)
-ln -s $PWD/shared/zshrc-base ~/.zshrc-base
-cp shared/zshrc-template ~/.zshrc
+#!/bin/bash -x
+!type antigen && yay -S antigen-git
+linux/util/link-config shared/zshrc-base ~/.zshrc-base
+
+if ![ -r ~/.zshrc ]; then
+  cp shared/zshrc-template ~/.zshrc
+fi
+
+setProfile() {
+  echo "Setting $1 in ~/.profile"
+  sed -i -E "s#^.*export $1.*\$#export $1=$2#g" ~/.profile
+}
+
+setProfile GUI_EDITOR /usr/bin/code
+setProfile EDITOR /usr/bin/vim
+setProfile VISUAL /usr/bin/vim

@@ -1,7 +1,8 @@
+#!/usr/bin/bash -x
 linux/util/link-config linux/manjaro-bspwm/bspwmrc ~/.config/bspwm/bspwmrc
 linux/util/link-config linux/manjaro-bspwm/sxhkdrc ~/.config/bspwm/sxhkdrc
 
-if ! `which i3lock-fancy-dualmonitor`; then
+if [ -z "`which i3lock-fancy-dualmonitor`" ]; then
   yay scrot graphicsmagick
   git clone git@github.com/meskarune/i3lock-fancy.git /tmp/i3lock-fancy
   pushd /tmp/i3lock-fancy
@@ -11,12 +12,3 @@ if ! `which i3lock-fancy-dualmonitor`; then
 else
   echo "Skipping i3lock fancy install..."
 fi
-
-function setProfile() {
-  echo "Settin $1 in ~/.profile"
-  sed -i "/$1/cexport $1=$2\" ~/.profile
-}
-
-setProfile GUI_EDITOR /usr/bin/code
-setProfile EDITOR /usr/bin/vim
-setProfile VISUAL /usr/bin/vim
