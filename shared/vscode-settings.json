@@ -6,7 +6,6 @@
   "editor.acceptSuggestionOnCommitCharacter": false,
   "editor.codeLens": false,
   "gitlens.codeLens.enabled": false,
-  "search.location": "panel",
   "vim.easymotion": true,
   "vim.useSystemClipboard": true,
   "workbench.editor.enablePreview": false,
