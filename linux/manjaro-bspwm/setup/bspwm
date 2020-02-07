@@ -1,4 +1,4 @@
-#!/usr/bin/bash -x
+#!/usr/bin/bash
 linux/util/link-config linux/manjaro-bspwm/bspwmrc ~/.config/bspwm/bspwmrc
 linux/util/link-config linux/manjaro-bspwm/sxhkdrc ~/.config/bspwm/sxhkdrc
 

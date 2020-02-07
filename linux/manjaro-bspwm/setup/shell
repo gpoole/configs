@@ -1,4 +1,4 @@
-#!/bin/bash -x
+#!/bin/bash
 !type antigen && yay -S antigen-git
 linux/util/link-config shared/zshrc-base ~/.zshrc-base
 
