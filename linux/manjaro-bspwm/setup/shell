@@ -1,16 +1,28 @@
-#!/bin/bash
-!type antigen && yay -S antigen-git
+#!/bin/bash -x
+[ -z "`pacman -Qm | grep antigen`" ] && yay -S antigen-git
 linux/util/link-config shared/zshrc-base ~/.zshrc-base
 
-if ![ -r ~/.zshrc ]; then
+if ! [ -r ~/.zshrc ]; then
   cp shared/zshrc-template ~/.zshrc
 fi
 
 setProfile() {
-  echo "Setting $1 in ~/.profile"
+  echo "Setting $1 in ~/.profile..."
   sed -i -E "s#^.*export $1.*\$#export $1=$2#g" ~/.profile
+}
+
+addPath() {
+  echo "Adding $1 to PATH in ~/.profile..."
+  # Make sure the file ends with an empty line
+  sed -i -e '$a\' ~/.profile
+  # Remove the path if we already added it
+  sed -i -e "\#PATH=$1.*#d" ~/.profile
+  echo "PATH=$1:\$PATH" >> ~/.profile
 }
 
 setProfile GUI_EDITOR /usr/bin/code
 setProfile EDITOR /usr/bin/vim
 setProfile VISUAL /usr/bin/vim
+addPath ~/Scripts
+addPath ~/Scripts/linux
+addPath ~/Scripts/local
