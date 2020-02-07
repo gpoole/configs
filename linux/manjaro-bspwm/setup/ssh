@@ -1,5 +1,5 @@
 #!/usr/bin/bash
 sudo pacman -S extra/keychain
 mkdir -p ~/.ssh/
-cp linux/arch/ssh-config ~/.ssh/config
+cp linux/manjaro-bspwm/ssh-config ~/.ssh/config
 echo "Enable the keychain startup in ~/.zshrc to remember key passwords."

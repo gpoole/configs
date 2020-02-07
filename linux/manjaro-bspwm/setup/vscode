@@ -1,0 +1,2 @@
+linux/setup/vscode
+cat linux/manjaro-bspwm/vscode-extensions.txt | xargs -n 1 code --install-extension

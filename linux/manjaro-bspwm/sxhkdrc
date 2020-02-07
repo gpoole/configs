@@ -1,0 +1,137 @@
+﻿#
+# Desktop control hotkeys
+#
+
+# Cleanly quit bspwm
+super + shift + q
+	bspc quit 1 && pkill lemonpanel && pkill lemonbar
+
+# make sxhkd reload its configuration files:
+super + shift + Escape
+	pkill -USR1 -x sxhkd
+
+# In case bspwmrc fails to execute/you wish have plugged in a new monitor
+super + shift + r
+	bspwmrc
+
+#
+# Window manipulation
+#
+
+# Close window
+super + x
+	bspc node -c
+
+# Kill window
+super + shift + x
+	bspc  node -k
+
+# Lock screen
+ctrl + alt + l
+	i3lock-fancy-dualmonitor
+
+# Toggle fullscreen
+super + shift + f 
+	bspc node -t {fullscreen,tiled}	
+
+#
+# Window moving and splitting
+#
+
+# Set splitting ratio of windows
+alt + ctrl + {1-9}
+	bspc node -o 0.{1-9}
+	
+## Focus desktop 1-9
+super + {1-9,0}
+	focusdesktopofthismonitor {1-9}
+
+# Move window to desktop 1-9
+super + shift + {1-9,0}
+	movetodesktopofthismonitor {1-9,10}
+
+# cycle windows
+alt + {_,shift + }Tab
+    bspc node -f {next,prev}
+
+# Focus windows
+super + {h,j,k,l}
+    focusmover {west,south,north,east}
+
+# Focus monitors
+super + {comma,period}
+  bspc monitor -f {west,east}
+
+# Move window to monitor
+super + shift + {comma,period}
+  bspc node -m {west,east} --follow
+
+# Swap nodes within the current desktop only
+super + shift + {h,j,k,l}
+	bspc node -s {west,south,north,east}.local
+
+# Resize windows
+super + ctrl + {h,j,k,l}
+	bspwm_resize.sh {west,south,north,east} 100
+	
+# Layout manipulation/desktop level controls
+#
+
+# Rotate leaves of tree
+super + shift + r
+	bspc node @/ -R 90
+
+#
+# Mouse bindings
+#
+
+# Spawn window manipulation menu
+# Mod1 is alt
+#    BspwmWindowMenu
+mod1 + @button1
+	mygtkmenui -- .config/GTKmenu/BspwmWindowMenui
+
+#
+# Spawn programs
+#
+
+# Application launcher
+super + space
+	dmenu_recent -fn 'xos4 Terminus:size=15' -i -l 14 -w 600 -y $PANEL_HEIGHT
+
+# File browser
+super + shift + Return
+	thunar
+
+# Terminal
+super + Return
+	default-terminal
+
+#
+# Screenshots
+#
+
+alt + shift + 4
+	~/Scripts/linux/selection-screenshot
+	
+#
+# Media keys
+#
+
+XF86AudioRaiseVolume
+	volume up
+
+XF86AudioLowerVolume
+	volume down
+
+XF86AudioMute
+	volume mute
+
+XF86MonBrightnessDown
+ light -U 5 
+
+XF86MonBrightnessUp
+ light -A 5
+
+XF86Sleep
+	systemctl suspend

@@ -1,0 +1,2 @@
+echo "Linking $2..."
+rm -f $2 && ln -s $PWD:$1 $2
