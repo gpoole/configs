@@ -11,6 +11,14 @@ source ~/.zshrc-base
 # PATH="$HOME/Scripts/mac:$PATH"
 # PATH="$HOME/Scripts/linux:$PATH"
 
+# Add anything in the Applications directory to PATH
+# setopt nullglob
+# for app in $HOME/Applications/*; do
+#   if [ -d "$app" ]; then
+#     PATH="$app:$PATH"
+#   fi
+# done
+
 # eval "$(ssh-agent)" > /dev/null
 
 # if [[ -z $(pidof ssh-agent) && -z $(pidof gpg-agent) ]]; then
