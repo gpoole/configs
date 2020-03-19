@@ -34,5 +34,8 @@
   "[javascript]": {
     "editor.defaultFormatter": "dbaeumer.vscode-eslint"
   },
-  "html.mirrorCursorOnMatchingTag": false
+  "html.mirrorCursorOnMatchingTag": false,
+  "files.associations": {
+    "*.css": "postcss"
+  }
 }
