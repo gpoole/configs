@@ -11,3 +11,7 @@ if [ -z "`csrutil status | grep disabled`" ]; then
 else
   sudo chunkwm --install-sa
 fi
+
+# Prevent switching workspaces automatically
+defaults write com.apple.dock workspaces-auto-swoosh -boolean NO
+killall Dock
