@@ -36,6 +36,7 @@
   },
   "html.mirrorCursorOnMatchingTag": false,
   "files.associations": {
-    "*.css": "postcss"
+    "*.css": "postcss",
+    ".env*": "shellscript"
   }
 }
