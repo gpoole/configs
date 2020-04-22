@@ -36,6 +36,21 @@
     "command": "-workbench.action.focusRightGroup",
     "when": "!isMac"
   },
+  {
+    "key": "ctrl+k j",
+    "command": "workbench.action.focusBelowGroup",
+    "when": "!isMac"
+  },
+  {
+    "key": "ctrl+k ctrl+j",
+    "command": "workbench.action.splitEditorDown",
+    "when": "!isMac"
+  },
+  {
+    "key": "ctrl+k k",
+    "command": "workbench.action.focusAboveGroup",
+    "when": "!isMac"
+  },
   // Unset existing panel shortcuts
   {
     "key": "cmd+k left",
