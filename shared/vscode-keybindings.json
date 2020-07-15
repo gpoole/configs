@@ -1,72 +1,5 @@
 // Place your key bindings in this file to overwrite the defaults
 [
-  // Panel shortcuts
-  {
-    "key": "cmd+k l",
-    "command": "workbench.action.focusNextGroup",
-    "when": "isMac"
-  },
-  {
-    "key": "cmd+k h",
-    "command": "workbench.action.focusPreviousGroup",
-    "when": "isMac"
-  },
-  {
-    "key": "cmd+k cmd+l",
-    "command": "workbench.action.splitEditor",
-    "when": "isMac"
-  },
-  {
-    "key": "ctrl+k h",
-    "command": "workbench.action.focusLeftGroup",
-    "when": "!isMac"
-  },
-  {
-    "key": "ctrl+k ctrl+left",
-    "command": "-workbench.action.focusLeftGroup",
-    "when": "!isMac"
-  },
-  {
-    "key": "ctrl+k l",
-    "command": "workbench.action.focusRightGroup",
-    "when": "!isMac"
-  },
-  {
-    "key": "ctrl+k ctrl+right",
-    "command": "-workbench.action.focusRightGroup",
-    "when": "!isMac"
-  },
-  {
-    "key": "ctrl+k j",
-    "command": "workbench.action.focusBelowGroup",
-    "when": "!isMac"
-  },
-  {
-    "key": "ctrl+k ctrl+j",
-    "command": "workbench.action.splitEditorDown",
-    "when": "!isMac"
-  },
-  {
-    "key": "ctrl+k k",
-    "command": "workbench.action.focusAboveGroup",
-    "when": "!isMac"
-  },
-  // Unset existing panel shortcuts
-  {
-    "key": "cmd+k left",
-    "command": "-workbench.action.splitEditor",
-    "when": "isMac"
-  },
-  {
-    "key": "cmd+k cmd+left",
-    "command": "-workbench.action.focusPreviousGroup",
-    "when": "isMac"
-  },
-  {
-    "key": "cmd+k cmd+right",
-    "command": "-workbench.action.focusNextGroup",
-    "when": "isMac"
-  },
   // Rename file with cmd+enter, open with enter
   {
     "key": "cmd+enter",
@@ -89,9 +22,65 @@
     "command": "-extension.vim_ctrl+b",
     "when": "editorTextFocus && vim.active && vim.use<C-b> && !inDebugRepl && vim.mode != 'Insert'"
   },
+  // Vim navigation commands in non-editor contexts
+  // https://github.com/VSCodeVim/Vim/issues/2376#issuecomment-573825034
+  // j/k to move between split terminals, h to move back to the editor
   {
-    "key": "ctrl+w",
-    "command": "-extension.vim_ctrl+w",
-    "when": "editorTextFocus && vim.active && vim.use<C-w> && !inDebugRepl"
+      "key": "ctrl+w j",
+      "command": "workbench.action.terminal.focusNextPane",
+      "when": "terminalFocus"
+  },
+  {
+      "key": "ctrl+w k",
+      "command": "workbench.action.terminal.focusPreviousPane",
+      "when": "terminalFocus"
+  },
+  {
+      "key": "ctrl+w h",
+      "command": "workbench.action.focusActiveEditorGroup",
+      "when": "terminalFocus"
+  },
+  {
+    "key": "ctrl+w c",
+    "command": "workbench.action.terminal.kill",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "ctrl+w s",
+    "command": "workbench.action.terminal.split",
+    "when": "terminalFocus"
+  },
+
+  // j/k to move between "open editors", the explorer tree, and outline;
+  // l to move back to the editor
+  {
+      "key": "ctrl+w k",
+      "command": "workbench.files.action.focusOpenEditorsView",
+      "when": "filesExplorerFocus"
+  },
+  {
+      "key": "ctrl+w j",
+      "command": "workbench.files.action.focusFilesExplorer",
+      "when": "openEditorsFocus"
+  },
+  {
+      "key": "ctrl+w l",
+      "command": "workbench.action.focusActiveEditorGroup",
+      "when": "explorerViewletFocus"
+  },
+  {
+      "key": "ctrl+w j",
+      "command": "outline.focus",
+      "when": "filesExplorerFocus"
+  },
+  {
+      "key": "ctrl+w k",
+      "command": "workbench.files.action.focusFilesExplorer",
+      "when": "outlineFocused"
+  },
+  {
+      "key": "ctrl+w l",
+      "command": "workbench.action.focusActiveEditorGroup",
+      "when": "outlineFocused"
   }
 ]
