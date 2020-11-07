@@ -12,6 +12,8 @@ function Add-Config {
 Add-Config "shared\vscode-settings.json" "settings.json"
 Add-Config "shared\vscode-keybindings.json" "keybindings.json"
 
-Get-Content (Join-Path $myConfigPath "shared\vscode-extensions.txt") | ForEach-Object {
+Push-Location (Join-Path $myConfigPath "shared\")
+Get-Content vscode-*.txt | ForEach-Object {
   code --install-extension $_
 }
+Pop-Location
