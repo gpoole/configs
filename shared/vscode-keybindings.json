@@ -16,16 +16,14 @@
     "command": "explorer.newFile",
     "when": "explorerViewletFocus"
   },
-  // VIM extension overrides
-  {
-    "key": "ctrl+b",
-    "command": "-extension.vim_ctrl+b",
-    "when": "editorTextFocus && vim.active && vim.use<C-b> && !inDebugRepl && vim.mode != 'Insert'"
-  },
   // Don't close the window with ctrl+w
   {
     "key": "ctrl+w",
     "command": "-workbench.action.closeWindow"
+  },
+  {
+    "key": "ctrl+w",
+    "command": "-workbench.action.closeActiveEditor"
   },
   // Vim navigation commands in non-editor contexts
   // https://github.com/VSCodeVim/Vim/issues/2376#issuecomment-573825034
@@ -54,6 +52,32 @@
     "key": "ctrl+w s",
     "command": "workbench.action.terminal.split",
     "when": "terminalFocus"
+  },
+  // WebView editor panels
+  {
+    "key": "ctrl+w j",
+    "command": "workbench.action.focusBelowGroup",
+    "when": "activeEditor == 'WebviewEditor'"
+  },
+  {
+    "key": "ctrl+w k",
+    "command": "workbench.action.focusAboveGroup",
+    "when": "activeEditor == 'WebviewEditor'"
+  },
+  {
+    "key": "ctrl+w h",
+    "command": "workbench.action.focusLeftGroup",
+    "when": "activeEditor == 'WebviewEditor'"
+  },
+  {
+    "key": "ctrl+w l",
+    "command": "workbench.action.focusRightGroup",
+    "when": "activeEditor == 'WebviewEditor'"
+  },
+  {
+    "key": "ctrl+w s",
+    "command": "workbench.action.splitEditorDown",
+    "when": "activeEditor == 'WebviewEditor'"
   },
   // j/k to move between "open editors", the explorer tree, and outline;
   // l to move back to the editor
