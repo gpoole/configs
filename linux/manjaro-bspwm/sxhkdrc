@@ -1,22 +1,22 @@
-﻿#
-# Desktop control hotkeys
-#
+﻿# -------------
+# Reload and quit
+# -------------
 
 # Cleanly quit bspwm
 super + shift + q
-	bspc quit 1 && pkill lemonpanel && pkill lemonbar
-
-# make sxhkd reload its configuration files:
-super + shift + Escape
-	pkill -USR1 -x sxhkd
+	bspc quit 1
 
 # In case bspwmrc fails to execute/you wish have plugged in a new monitor
 super + shift + r
 	bspwmrc
 
-#
+# make sxhkd reload its configuration files:
+super + shift + Escape
+	notify-send.sh -t 2000 "Reload sxhkd." && pkill -USR1 -x sxhkd 
+
+# -------------
 # Window manipulation
-#
+# -------------
 
 # Close window
 super + x
@@ -24,99 +24,111 @@ super + x
 
 # Kill window
 super + shift + x
-	bspc  node -k
+	bspc node -k
+	
+# Toggle fullscreen
+super + shift + f 
+	bspc node -t {fullscreen,tiled}	
+
+# Toggle sticky
+super + i
+	bspc node -g sticky
+
+# -------------
+# Workspaces and monitors
+# -------------
+
+# Cycle left and right through workspaces
+super + {Left,Right}
+  bspc desktop -f {prev,next}.local
+
+# Select desktop 1-9 on current monitor
+super + {1-9,0}
+	focusdesktopofthismonitor {1-9}
+
+# Move window to desktop 1-9 on current monitor
+super + shift + {1-9,0}
+	movetodesktopofthismonitor {1-9,10}
+
+# -------------
+# Window moving and splitting
+# -------------
+
+# Preselect location for next window (again to cancel)
+alt + ctrl + {h,j,k,l}
+	bspc node -p \~{west,south,north,east}
+
+# Focus window in direction
+super + {h,j,k,l}
+    focusmover {west,south,north,east}
+
+# Focus monitor in direction
+super + {comma,period}
+  bspc monitor -f {west,east}
+
+# Move window to monitor in direction
+super + shift + {comma,period}
+  bspc node -m {west,east} --follow
+
+# Swap window in direction
+super + shift + {h,j,k,l}
+	bspc node -s {west,south,north,east}.local
+
+# Resize window in direction
+super + ctrl + {h,j,k,l}
+	bspwm_resize.sh {west,south,north,east} 100
+
+# -------------
+# Layout manipulation/desktop level controls
+# -------------
+
+# Toggle monocle mode
+super + f 
+	bspc desktop -l next
+
+# Cycle focus forward and backward for current monitor
+alt + {_,shift + }Tab
+	bspc node -f {prev,next}.local
 
 # Lock screen
 ctrl + alt + l
 	i3lock-fancy-dualmonitor
 
-# Toggle fullscreen
-super + shift + f 
-	bspc node -t {fullscreen,tiled}	
-
-#
-# Window moving and splitting
-#
-
-# Set splitting ratio of windows
-alt + ctrl + {1-9}
-	bspc node -o 0.{1-9}
-	
-## Focus desktop 1-9
-super + {1-9,0}
-	focusdesktopofthismonitor {1-9}
-
-# Move window to desktop 1-9
-super + shift + {1-9,0}
-	movetodesktopofthismonitor {1-9,10}
-
-# cycle windows
-alt + {_,shift + }Tab
-    bspc node -f {next,prev}
-
-# Focus windows
-super + {h,j,k,l}
-    focusmover {west,south,north,east}
-
-# Focus monitors
-super + {comma,period}
-  bspc monitor -f {west,east}
-
-# Move window to monitor
-super + shift + {comma,period}
-  bspc node -m {west,east} --follow
-
-# Swap nodes within the current desktop only
-super + shift + {h,j,k,l}
-	bspc node -s {west,south,north,east}.local
-
-# Resize windows
-super + ctrl + {h,j,k,l}
-	bspwm_resize.sh {west,south,north,east} 100
-	
-# Layout manipulation/desktop level controls
-#
-
-# Rotate leaves of tree
-super + shift + r
-	bspc node @/ -R 90
-
-#
-# Mouse bindings
-#
+# -------------
+# Mouse controls
+# -------------
 
 # Spawn window manipulation menu
-# Mod1 is alt
-#    BspwmWindowMenu
 mod1 + @button1
-	mygtkmenui -- .config/GTKmenu/BspwmWindowMenui
+    mygtkmenui -- .config/GTKmenu/BspwmWindowMenui
 
-#
-# Spawn programs
-#
+# -------------
+# Launch
+# -------------
 
-# Application launcher
+# Show dmenu
 super + space
 	dmenu_recent -fn 'xos4 Terminus:size=15' -i -l 14 -w 600 -y $PANEL_HEIGHT
 
-# File browser
+# Open file manager
 super + shift + Return
 	thunar
 
-# Terminal
+# Open terminal
 super + Return
-	default-terminal
+	st
 
-#
-# Screenshots
-#
-
+# Take a ruler screenshot (macOS style)
 alt + shift + 4
 	~/Scripts/linux/selection-screenshot
-	
-#
+
+# Measure an area of screen
+alt + shift + m
+	~/Scripts/linux/measure
+
+# -------------
 # Media keys
-#
+# -------------
 
 XF86AudioRaiseVolume
 	volume up
@@ -126,12 +138,12 @@ XF86AudioLowerVolume
 
 XF86AudioMute
 	volume mute
-
+	
 XF86MonBrightnessDown
- light -U 5 
+  light -U 5 
 
 XF86MonBrightnessUp
- light -A 5
+  light -A 5
 
 XF86Sleep
 	systemctl suspend

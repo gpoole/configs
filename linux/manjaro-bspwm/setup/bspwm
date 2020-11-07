@@ -1,6 +1,6 @@
 #!/usr/bin/bash
 linux/util/link-config linux/manjaro-bspwm/bspwmrc ~/.config/bspwm/bspwmrc
-linux/util/link-config linux/manjaro-bspwm/sxhkdrc ~/.config/bspwm/sxhkdrc
+linux/util/link-config linux/manjaro-bspwm/sxhkdrc ~/.config/sxhkd/sxhkdrc
 
 if [ -z "`which i3lock-fancy-dualmonitor`" ]; then
   yay scrot graphicsmagick
