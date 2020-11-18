@@ -1,0 +1,3 @@
+slevesque.shader
+ms-vscode.csharp
+Leopotam.csharpfixformat

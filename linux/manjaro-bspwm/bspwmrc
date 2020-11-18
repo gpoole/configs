@@ -1,4 +1,4 @@
-#! /bin/sh
+#!/bin/bash
 gap=15
 PANEL_HEIGHT=32
 export gap
@@ -48,7 +48,20 @@ bspc config split_ratio         0.52
 #bspc monitor -d I II III IV V VI
 
 ###This creates and names desktops for multiple monitors.
-workspaces_multimonitor &
+# workspaces_multimonitor &
+
+# Set up workspaces for all monitors
+monitor_count=$(bspc query -M | wc -l)
+workspaces_per_monitor=5
+function workspace-seq() {
+  local start=$((($1 - 1) * $workspaces_per_monitor))
+  local end=$(($start + $workspaces_per_monitor - 1))
+  local i
+  seq $start $end
+}
+for monitor in `seq 1 $monitor_count`; do
+  bspc monitor $(bspc query -M | awk NR==$monitor) -d `workspace-seq $monitor`
+done
 
 bspc rule -a screenkey --unmanage
 bspc rule -a gcolor2 state=floating center=true
@@ -115,10 +128,3 @@ bspc config external_rules_command /usr/bin/pseudo_automatic_mode
 #Source autostartfile. Uncomment this if you use bspwm-git
 #. $HOME/.config/bspwm/autostart
 # limepanel &
-launch-polybar
-# Alter compton settings if using intel graphics
-GRAPHIC_CARD=$(lspci | grep -i "vga" | sed 's/.*://' | sed 's/(.*//' | sed 's/^[ \t]*//')
-if [[ $(echo $GRAPHIC_CARD | grep -i 'intel\|lenovo') != "" ]]; then MCODE='initrd=\intel-ucode.img'
-  sed -i 's/"xrender"/"glx"/' ~/.config/compton.conf
-  grep -q 'vsync = "opengl-swc";' ~/.config/compton.conf || echo 'vsync = "opengl-swc";' >> ~/.config/compton.conf
-fi

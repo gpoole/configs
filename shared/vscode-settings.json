@@ -38,5 +38,27 @@
   "files.associations": {
     "*.css": "postcss",
     ".env*": "shellscript"
-  }
+  },
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": [
+        "<C-e>"
+      ],
+      "after": [
+        "1",
+        "0",
+        "<C-e>"
+      ]
+    },
+    {
+      "before": [
+        "<C-y>"
+      ],
+      "after": [
+        "1",
+        "0",
+        "<C-y>"
+      ]
+    }
+  ]
 }
