@@ -22,11 +22,11 @@ chunkc set global_desktop_mode           bsp
 chunkc set 1_desktop_mode                float
 chunkc set 2_desktop_mode                monocle
 
-chunkc set global_desktop_offset_top     15
-chunkc set global_desktop_offset_bottom  15
-chunkc set global_desktop_offset_left    15
-chunkc set global_desktop_offset_right   15
-chunkc set global_desktop_offset_gap     15
+chunkc set global_desktop_offset_top     5
+chunkc set global_desktop_offset_bottom  5
+chunkc set global_desktop_offset_left    5
+chunkc set global_desktop_offset_right   5
+chunkc set global_desktop_offset_gap     5
 
 chunkc set desktop_padding_step_size     10.0
 chunkc set desktop_gap_step_size         5.0
@@ -104,3 +104,4 @@ chunkc tiling::rule --owner "JetBrains Rider" --name Generate --state float
 chunkc tiling::rule --owner "JetBrains Rider" --name Rename --state float
 chunkc tiling::rule --owner "JetBrains Rider" --name Preferences --state float
 chunkc tiling::rule --owner "JetBrains Rider" --name Evaluate --state float
+chunkc tiling::rule --owner "Firefox" --name "Picture-in-Picture" --state float
