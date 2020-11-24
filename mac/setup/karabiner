@@ -1,3 +1,4 @@
+echo "You will need to quit Karabiner before running or it will overwrite this."
 rm -f ~/.config/karabiner/karabiner.json
 ln -s $PWD/mac/karabiner.json ~/.config/karabiner/karabiner.json
 
