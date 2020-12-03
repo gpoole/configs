@@ -2,7 +2,7 @@ if ! [ -x /Applications/kitty.app/Contents/MacOS/kittY ]; then
   curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
 fi 
 if ! [ -r ~/.config/kitty ]; then
-  ln -s $PWD/shared/kitty ~/.config/kitty
+  ln -s $PWD/shared/kitty ~/.config/kitty/kitty.conf
   echo "Installing theme..."
-  curl https://github.com/kdrag0n/base16-kitty/blob/master/colors/base16-default-dark.conf > ~/.config/kitty/theme.conf
+  curl https://raw.githubusercontent.com/kdrag0n/base16-kitty/master/colors/base16-oceanicnext.conf > ~/.config/kitty/theme.conf
 fi

@@ -20,3 +20,4 @@ bierner.markdown-emoji
 bierner.markdown-preview-github-styles
 bierner.markdown-yaml-preamble
 mhutchie.git-graph
+AndrsDC.base16-themes

@@ -1,0 +1,3 @@
+mkdir -p ~/.config/kitty/
+linux/util/link-config linux/manjaro-bspwm/kitty.conf ~/.config/kitty/kitty.conf
+curl https://raw.githubusercontent.com/kdrag0n/base16-kitty/master/colors/base16-oceanicnext.conf > ~/.config/kitty/theme.conf
