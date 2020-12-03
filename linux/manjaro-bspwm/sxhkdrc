@@ -116,7 +116,7 @@ super + shift + Return
 
 # Open terminal
 super + Return
-	st
+	kitty
 
 # Take a ruler screenshot (macOS style)
 alt + shift + 4
