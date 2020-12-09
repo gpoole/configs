@@ -1,8 +1,12 @@
 if ! [ -x /Applications/kitty.app/Contents/MacOS/kittY ]; then
   curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
 fi 
-if ! [ -r ~/.config/kitty ]; then
-  ln -s $PWD/shared/kitty ~/.config/kitty/kitty.conf
+
+mkdir -p ~/.config/kitty
+if ! [ -r ~/.config/kitty/kitty.conf ]; then
+  ln -s $PWD/mac/kitty.conf ~/.config/kitty/kitty.conf
   echo "Installing theme..."
   curl https://raw.githubusercontent.com/kdrag0n/base16-kitty/master/colors/base16-oceanicnext.conf > ~/.config/kitty/theme.conf
+else
+  echo "Skipping installing config, already exists."
 fi
