@@ -95,7 +95,7 @@ alt + {_,shift + }Tab
 	bspc node -f {prev,next}.local
 
 # Lock screen
-ctrl + alt + l
+ctrl + alt + super + l
 	i3lock-fancy-dualmonitor
 
 # -------------
