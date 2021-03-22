@@ -9,11 +9,12 @@ function Add-Config {
   New-Item -Path $fullTargetPath -ItemType SymbolicLink -Value (Join-Path $myConfigPath $source)
 }
 
-Add-Config "shared\vscode-settings.json" "settings.json"
-Add-Config "shared\vscode-keybindings.json" "keybindings.json"
+Add-Config "shared\vscode\settings.json" "settings.json"
+Add-Config "shared\vscode\keybindings.json" "keybindings.json"
+Add-Config "shared\vscode\snippets" "snippets"
 
 Push-Location (Join-Path $myConfigPath "shared\")
-Get-Content vscode-*.txt | ForEach-Object {
+Get-Content vscode\extensions-*.txt | ForEach-Object {
   code --install-extension $_
 }
 Pop-Location

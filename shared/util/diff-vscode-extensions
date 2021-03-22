@@ -1,2 +1,2 @@
-cat shared/vscode-*.txt | sort | uniq > /tmp/vscode-current.txt
+cat shared/vscode/extensions-*.txt | sort | uniq > /tmp/vscode-current.txt
 code --list-extensions | sort | diff -s /tmp/vscode-current.txt -
