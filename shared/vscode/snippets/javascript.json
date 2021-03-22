@@ -14,7 +14,9 @@
   // }
   "Import react": {
     "prefix": "impr",
-    "body": ["import React from 'react';"]
+    "body": [
+      "import { $1 } from 'react';"
+    ]
   },
   "Import styled-components": {
     "prefix": "impsc",
@@ -22,7 +24,11 @@
   },
   "React pure functional component:": {
     "prefix": "compf",
-    "body": ["const $1 = (${2:{ $3 \\}}) => (", "\t$4", ");"]
+    "body": [
+      "const $1 = (${2:{ $3 \\}}) => (",
+      "\t$4",
+      ");"
+    ]
   },
   "Export default": {
     "prefix": "expd",
@@ -30,10 +36,16 @@
   },
   "Styled component": {
     "prefix": "sc",
-    "body": ["const $1 = styled.$2`", "\t$3", "`;"]
+    "body": [
+      "const $1 = styled.$2`",
+      "\t$3",
+      "`;"
+    ]
   },
   "Require": {
     "prefix": "req",
-    "body": ["const $1 = require(\"${2:$1}\");$3"]
+    "body": [
+      "const $1 = require(\"${2:$1}\");$3"
+    ]
   }
 }
