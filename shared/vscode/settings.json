@@ -38,6 +38,18 @@
     "*.css": "postcss",
     ".env*": "shellscript"
   },
+  "vim.debug.loggingLevelForConsole": "debug",
+  "vim.normalModeKeyBindings": [
+    {
+      "before": [
+        "<C-w>",
+        "b"
+      ],
+      "commands": [
+        "workbench.action.toggleSidebarVisibility"
+      ]
+    }
+  ],
   "vim.normalModeKeyBindingsNonRecursive": [
     {
       "before": [

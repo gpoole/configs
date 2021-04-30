@@ -25,11 +25,6 @@
     "key": "ctrl+w",
     "command": "-workbench.action.closeActiveEditor"
   },
-  // Toggle side bar
-  {
-    "key": "ctrl+w b",
-    "command": "workbench.action.toggleSidebarVisibility"
-  },
   // Vim navigation commands in non-editor contexts
   // https://github.com/VSCodeVim/Vim/issues/2376#issuecomment-573825034
   // j/k to move between split terminals, h to move back to the editor
