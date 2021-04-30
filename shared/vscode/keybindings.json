@@ -29,6 +29,21 @@
   // https://github.com/VSCodeVim/Vim/issues/2376#issuecomment-573825034
   // j/k to move between split terminals, h to move back to the editor
   {
+    "key": "ctrl+w shift+l",
+    "command": "workbench.action.positionPanelRight",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "ctrl+w shift+h",
+    "command": "workbench.action.positionPanelLeft",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "ctrl+w shift+j",
+    "command": "workbench.action.positionPanelBottom",
+    "when": "terminalFocus"
+  },
+  {
     "key": "ctrl+w j",
     "command": "workbench.action.terminal.focusNextPane",
     "when": "terminalFocus"
@@ -41,6 +56,11 @@
   {
     "key": "ctrl+w h",
     "command": "workbench.action.focusActiveEditorGroup",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "ctrl+w b",
+    "command": "workbench.action.toggleSidebarVisibility",
     "when": "terminalFocus"
   },
   {
