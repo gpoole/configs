@@ -151,5 +151,6 @@ layout - b : chunkc tiling::desktop --layout bsp && khd -e 'mode activate defaul
 layout - f : chunkc tiling::desktop --layout float && khd -e 'mode activate default'
 
 # Launchers
-cmd - return : nohup /Applications/kitty.app/Contents/MacOS/kittY --single-instance -d ~
+cmd - return : nohup /Applications/kitty.app/Contents/MacOS/kittY -c ~/.config/kitty/kitty-borderless.conf -d ~
+cmd + ctrl - return : nohup /Applications/kitty.app/Contents/MacOS/kittY -d ~
 cmd + shift - return : open ~/

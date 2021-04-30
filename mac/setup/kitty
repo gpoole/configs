@@ -1,0 +1,9 @@
+if ! [ -x /Applications/kitty.app/Contents/MacOS/kittY ]; then
+  curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
+fi 
+
+mac/util/link-config mac/kitty.conf ~/.config/kitty/kitty.conf
+mac/util/link-config mac/kitty-borderless.conf ~/.config/kitty/kitty-borderless.conf
+
+echo "Installing theme..."
+curl https://raw.githubusercontent.com/kdrag0n/base16-kitty/master/colors/base16-oceanicnext.conf > ~/.config/kitty/theme.conf

@@ -20,7 +20,6 @@
     "suppressResultsExplorerNotice": false,
     "suppressShowKeyBindingsNotice": true
   },
-  "window.zoomLevel": 1,
   "csharp.format.enable": false,
   "editor.minimap.enabled": false,
   "javascript.updateImportsOnFileMove.enabled": "always",
