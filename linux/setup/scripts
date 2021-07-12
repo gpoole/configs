@@ -1,4 +1,4 @@
-git clone git@github.com:gpoole/scripts.git ~/Scripts
+git clone --recurse-submodules git@github.com:gpoole/scripts.git ~/Scripts
 
 # These paths are in zshrc-template, but add them to .profile too
 echo '\nPATH=$HOME/Scripts:$PATH' >> ~/.profile

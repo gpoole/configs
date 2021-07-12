@@ -23,7 +23,7 @@
   "csharp.format.enable": false,
   "editor.minimap.enabled": false,
   "javascript.updateImportsOnFileMove.enabled": "always",
-  "workbench.colorTheme": "Base16 Dark Oceanic Next",
+  "workbench.colorTheme": "Base16 OceanicNext Dark",
   "editor.tabSize": 2,
   "editor.lineNumbers": "relative",
   "workbench.activityBar.visible": false,
