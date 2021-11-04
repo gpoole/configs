@@ -36,7 +36,8 @@
   "html.mirrorCursorOnMatchingTag": false,
   "files.associations": {
     "*.css": "postcss",
-    ".env*": "shellscript"
+    ".env*": "shellscript",
+    "*.html": "html"
   },
   "vim.debug.loggingLevelForConsole": "debug",
   "vim.normalModeKeyBindings": [
@@ -71,5 +72,15 @@
         "<C-y>"
       ]
     }
-  ]
+  ],
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+  "editor.codeActionsOnSave": {
+    "source.fixAll.stylelint": true
+  },
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "css.validate": false,
+  "less.validate": false,
+  "scss.validate": false
 }
