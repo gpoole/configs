@@ -25,3 +25,5 @@ PATH="$HOME/Scripts:$PATH"
 PATH="$HOME/Scripts/local:$PATH"
 
 setopt extendedglob
+
+alias beep=echo -ne '\007'
