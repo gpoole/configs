@@ -1,11 +1,15 @@
 # Homebrew
 if [ -z `which brew` ]; then
   /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+  eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 
 # zshell
 brew install zsh zsh-completions antigen
 chsh -s $(which zsh)
+
+sudo mkdir -p /usr/local/share
+sudo ln -s /opt/homebrew/share/antigen/ /usr/local/share/antigen
 
 ln -s $PWD/shared/zshrc-base ~/.zshrc-base
 cp shared/zshrc-template ~/.zshrc

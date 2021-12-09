@@ -1,5 +1,5 @@
 if ! [ -x /Applications/kitty.app/Contents/MacOS/kittY ]; then
-  curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
+  brew install --cask kitty
 fi 
 
 mac/util/link-config mac/kitty.conf ~/.config/kitty/kitty.conf
