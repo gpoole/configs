@@ -9,7 +9,10 @@ antigen bundle zsh-users/zsh-autosuggestions
 export NVM_AUTO_USE=true
 antigen bundle lukechilds/zsh-nvm
 
-antigen theme avit
+# antigen theme kphoen
+# antigen theme rkj-repos
+# antigen theme xiong-chiamiov-plus
+antigen theme tjkirch
 
 antigen apply
 
