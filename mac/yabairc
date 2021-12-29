@@ -1,0 +1,62 @@
+#!/bin/bash
+
+sudo yabai --load-sa
+yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
+
+yabai -m config layout float
+
+# yabai -m config window_opacity on
+# yabai -m config active_window_opacity 1
+# yabai -m config normal_window_opacity 0.9
+yabai -m config mouse_follows_focus on
+
+yabai -m config top_padding    10
+yabai -m config bottom_padding 10
+yabai -m config left_padding   10
+yabai -m config right_padding  10
+yabai -m config window_gap     10
+
+yabai -m config split_ratio 0.5
+
+
+# This is set because you can only change spaces with the keyboard (ctrl + <- or ctrl + ->) if the actual mouse pointer
+# is on the desktop you want to change
+yabai -m config mouse_follows_focus           intrinsic
+yabai -m config window_float_next             0
+yabai -m config window_float_center           1
+yabai -m config window_region_locked          1
+
+# Borders are deprecated or missing now?
+# yaba -m config preselect_border_color        0xffd75f5f
+# yaba -m config preselect_border_width        5
+# yaba -m config preselect_border_radius       0
+
+yabai -m config window_float_topmost          1
+yabai -m config window_fade_inactive          0
+yabai -m config window_fade_alpha             0.85
+yabai -m config window_fade_duration          0.25
+yabai -m config window_use_cgs_move           0
+
+# Borders are deprecated or missing now?
+# yaba -m config focused_border_color          0x00FFFFFF
+# yaba -m config focused_border_width          4
+# yaba -m config focused_border_radius         0
+# yaba -m config focused_border_skip_floating  0
+
+# FIXME: Need to port all these rules from chunkwm
+
+# chunkc tiling::rule --owner Spotify --role AXWindow --subrole AXDialog --state tile
+# chunkc tiling::rule --owner VLC --state float
+# chunkc tiling::rule --owner Finder --name Copy --state float
+# chunkc tiling::rule --owner \"App Store\" --state float
+# chunkc tiling::rule --owner VirtualBox --state float
+# chunkc tiling::rule --owner \"Accessibility Inspector\" --state float
+# chunkc tiling::rule --owner "Unity Hub" --state float
+# The rule above seems to cause Unity to float as well, but this override then forces *all*
+# Unity windows to tile, including popups
+# chunkc tiling::rule --owner "^Unity$" --state tile
+# chunkc tiling::rule --owner "JetBrains Rider" --name Generate --state float
+# chunkc tiling::rule --owner "JetBrains Rider" --name Rename --state float
+# chunkc tiling::rule --owner "JetBrains Rider" --name Preferences --state float
+# chunkc tiling::rule --owner "JetBrains Rider" --name Evaluate --state float
+# chunkc tiling::rule --owner "Firefox" --name "Picture-in-Picture" --state float

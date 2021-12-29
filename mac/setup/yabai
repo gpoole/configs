@@ -1,0 +1,20 @@
+brew install koekeishiya/formulae/skhd koekeishiya/formulae/yabai
+ln -s $PWD/mac/skhdrc ~/.skhdrc
+ln -s $PWD/mac/yabairc ~/.yabairc
+mkdir ~/.yabai_layouts
+brew services start yabai
+brew services start skhd
+
+# if ! [ -r /private/etc/sudoers.d/yabai ]; then
+#   echo "`whoami` ALL = (root) NOPASSWD: /usr/local/bin/yabai --load-sa" | sudo EDITOR="tee" visudo /private/etc/sudoers.d/yabai > /dev/null
+# fi
+
+if [ -z "`csrutil status | grep disabled`" ]; then
+  echo "SIP is enabled, disable it to install yabai-sa"
+else
+  sudo yabai --install-sa
+fi
+
+# Prevent switching workspaces automatically
+defaults write com.apple.dock workspaces-auto-swoosh -boolean NO
+killall Dock

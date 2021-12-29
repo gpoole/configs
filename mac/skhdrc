@@ -1,0 +1,134 @@
+:: layout
+:: resize
+:: move
+:: desktop
+
+# Activate modes
+ctrl - o ; layout
+ctrl - r ; resize
+ctrl - m ; move
+ctrl - d ; desktop
+layout < escape ; default
+resize < escape ; default
+move < escape ; default
+
+# Borders are not working on M1 currently
+# colours: https://www.colourlovers.com/palette/3283292/Bright_futures
+# khd mode resize on_enter chunkc border::color 0xFF0FC3E8
+# khd mode save_layout on_enter chunkc border::color 0x88E1E4E6
+# khd mode layout on_enter chunkc border::color 0xFFE1E4E6
+# khd mode default on_enter chunkc border::color 0x00000000
+# khd mode move on_enter chunkc border::color 0xFFFA2A00
+
+# khd mode desktop prefix on
+# khd mode desktop timeout 0.75
+
+# screenshot fix
+# cmd + shift - 4 -> : chunkc border::clear
+
+# desktop control 
+
+ctrl - h : yabai -m space --focus prev
+ctrl - l : yabai -m space --focus next
+# FIXME: port from chunwm
+# desktop - c : chunkc tiling::desktop --create; chunkc tiling::query --desktops-for-monitor `chunkc tiling::query --monitor id` | tr ' ' '\n' | tail -n 1 | xargs yabai -m space --focus
+# desktop - d : chunkc tiling::desktop --annihilate
+
+# for i in `seq 1 9`; do
+#   echo "alt - $i : yabai -m space --focus $i"
+# done
+
+alt - 1 : yabai -m space --focus 1
+alt - 2 : yabai -m space --focus 2
+alt - 3 : yabai -m space --focus 3
+alt - 4 : yabai -m space --focus 4
+alt - 5 : yabai -m space --focus 5
+alt - 6 : yabai -m space --focus 6
+alt - 7 : yabai -m space --focus 7
+alt - 8 : yabai -m space --focus 8
+alt - 9 : yabai -m space --focus 9
+
+# focus window
+alt - h : yabai -m window --focus west
+alt - j : yabai -m window --focus south
+alt - k : yabai -m window --focus north
+alt - l : yabai -m window --focus east
+
+# close window
+ctrl - x : yabai -m window --close
+
+# focus monitor
+alt + shift - h : yabai -m display --focus west
+alt + shift - l : yabai -m display --focus east
+
+# equalize size of windows
+# resize - e : chunkc tiling::desktop --equalize
+
+# warp window
+move < h : yabai -m window --warp west
+move < j : yabai -m window --warp south
+move < k : yabai -m window --warp north
+move < l : yabai -m window --warp east
+
+# swap window
+move < shift - h : yabai -m window --swap west
+move < shift - j : yabai -m window --swap south
+move < shift - k : yabai -m window --swap north
+move < shift - l : yabai -m window --swap east
+
+# send window to desktop and switch desktop
+move < cmd - h : yabai -m window --space prev; yabai -m space --focus prev
+move < cmd - l : yabai -m window --space next; yabai -m space --focus next
+
+# for i in `seq 1 9`; do
+#   echo "move + cmd - $i : chunkc tiling:window --send-to-desktop $i; yabai -m space --focus $i"
+# done
+
+move < cmd - 1 : yabai -m window --space 1; yabai -m space --focus 1
+move < cmd - 2 : yabai -m window --space 2; yabai -m space --focus 2
+move < cmd - 3 : yabai -m window --space 3; yabai -m space --focus 3
+move < cmd - 4 : yabai -m window --space 4; yabai -m space --focus 4
+move < cmd - 5 : yabai -m window --space 5; yabai -m space --focus 5
+move < cmd - 6 : yabai -m window --space 6; yabai -m space --focus 6
+move < cmd - 7 : yabai -m window --space 7; yabai -m space --focus 7
+move < cmd - 8 : yabai -m window --space 8; yabai -m space --focus 8
+move < cmd - 9 : yabai -m window --space 9; yabai -m space --focus 9
+
+# send window to monitor and follow focus
+move < cmd + shift - h  : yabai -m window --display west; yabai -m display --focus west
+move < cmd + shift - l  : yabai -m window --display east; yabai -m display --focus east
+
+## float specific window
+move < f : yabai -m window --toggle float
+
+# Resize mode
+
+## increase region size
+resize < h : yabai -m window --use-temporary-ratio 0.1 --adjust-window-edge west
+resize < j : yabai -m window --use-temporary-ratio 0.1 --adjust-window-edge south
+resize < k : yabai -m window --use-temporary-ratio 0.1 --adjust-window-edge north
+resize < l : yabai -m window --use-temporary-ratio 0.1 --adjust-window-edge east
+
+## decrease region size
+resize < shift - h : yabai -m window --use-temporary-ratio -0.1 --adjust-window-edge west
+resize < shift - j : yabai -m window --use-temporary-ratio -0.1 --adjust-window-edge south
+resize < shift - k : yabai -m window --use-temporary-ratio -0.1 --adjust-window-edge north
+resize < shift - l : yabai -m window --use-temporary-ratio -0.1 --adjust-window-edge east
+
+## toggle window full-size
+ctrl - f : yabai -m window --toggle zoom-fullscreen
+
+## toggle window native fullscreen
+ctrl + shift - f : yabai -m window --toggle native-fullscreen
+
+# rotate tree
+# cmd + ctrl - r : chunkc tiling::desktop --rotate 90
+
+# Control layout mode
+layout < b : yabai -m space --layout bsp
+layout < f : yabai -m space --layout float
+
+# Launchers
+cmd - return : nohup /Applications/kitty.app/Contents/MacOS/kittY -c ~/.config/kitty/kitty-borderless.conf --single-instance --instance-group borderless -d ~
+cmd + ctrl - return : nohup /Applications/kitty.app/Contents/MacOS/kittY --single-instance -d ~
+cmd + shift - return : open ~/
