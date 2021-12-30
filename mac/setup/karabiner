@@ -1,5 +1,6 @@
 echo "You will need to quit Karabiner before running or it will overwrite this."
-rm -f ~/.config/karabiner/karabiner.json
-ln -s $PWD/mac/karabiner.json ~/.config/karabiner/karabiner.json
+read -p "Ready?"
+cp -f $PWD/mac/karabiner.json ~/.config/karabiner/karabiner.json
+echo "Note karabiner.json can't be symlinked because Karabiner overwrites it."
 
 defaults write -g ApplePressAndHoldEnabled -bool false
