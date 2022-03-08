@@ -35,6 +35,23 @@
                                 "type": "basic"
                             }
                         ]
+                    },
+                    {
+                        "description": "Disable Cmd+m minimise",
+                        "manipulators": [
+                            {
+                                "description": "",
+                                "from": {
+                                    "key_code": "m",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "command"
+                                        ]
+                                    }
+                                },
+                                "type": "basic"
+                            }
+                        ]
                     }
                 ]
             },
